@@ -1,4 +1,10 @@
+const PrismicConfig = require('./prismic.config');
+const Prismic = require('prismic-javascript');
+
 export default {
+  assetsSubDirectory: '/static',
+  assetsPublicPath: '/',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'olszowski-nuxt-prismic',
@@ -17,6 +23,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/styles/main.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -32,7 +39,31 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/prismic',
   ],
+
+  prismic: {
+    endpoint: PrismicConfig.apiEndpoint,
+    apiOptions: {
+      access_token: PrismicConfig.token,
+    },
+  },
+
+  generate: {
+    async routes() {
+      // const client = Prismic.client(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.token })
+      // const servicePages = Prismic.Predicates.at('document.type', 'service_page')
+      // const projectPages = Prismic.Predicates.at('document.type', 'projects_single')
+      // const serviceResponse = await client.query(servicePages)
+      // const projectResponse = await client.query(projectPages)
+      // /*logger.info('hi there. response=', response)*/
+
+      // const allServicesRoutes = serviceResponse.results.map(el => `/services/${el.uid}/`)
+      // const allProjectRoutes = projectResponse.results.map(el => `/projects/${el.uid}/`)
+      // return [...allServicesRoutes, ...allProjectRoutes]
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
