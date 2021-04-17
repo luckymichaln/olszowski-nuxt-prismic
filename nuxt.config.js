@@ -1,5 +1,5 @@
 const PrismicConfig = require('./prismic.config');
-const Prismic = require('prismic-javascript');
+// const Prismic = require('prismic-javascript');
 
 export default {
   assetsSubDirectory: '/static',
@@ -17,7 +17,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'shortcut icon', type: 'image/png', href: '/favicon.png' },
     ]
   },
 
@@ -34,8 +34,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

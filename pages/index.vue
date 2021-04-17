@@ -1,15 +1,28 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        olszowski-nuxt-prismic
-      </h1>
-    </div>
-  </div>
+  <home :rows="homePageData"/>
 </template>
 
 <script>
-  export default {
+  import { mapGetters, mapState } from 'vuex';
+  import home from '~/components/home/home';
 
+  export default {
+    async asyncData({ store }) {
+      if (!store.getters['pages/homePageData']) {
+        await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'homepage' })
+      }
+    },
+
+    computed: {
+      ...mapGetters('pages', ['homePageData']),
+    },
+
+    mounted() {
+      console.log(this.homePageData, 'homePageData')
+    },
+
+    components: {
+      home
+    }
   }
 </script>

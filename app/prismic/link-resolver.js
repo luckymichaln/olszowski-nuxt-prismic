@@ -1,15 +1,16 @@
 export default (doc) => {
+  console.log(doc, 'doc')
   if (doc.isBroken) {
-    return '/not-found/'
+    return '/not-found'
   }
 
-  if (doc.type === 'home_page') {
+  if (doc.type === 'homepage') {
     return '/'
   }
 
-  if (doc.type === 'project_page') {
-    return `/${doc.uid}/`
+  if (doc.type === 'project') {
+    return `/${doc.uid}`
   }
 
-  return '/not-found/'
+  return '/not-found'
 };
