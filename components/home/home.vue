@@ -1,17 +1,15 @@
 <template>
   <div class="home-page">
-    <div class="container">
-      <nav class="nav">
-        <nuxt-link
-          to="/contact"
-        >
-          Contact
-        </nuxt-link>
-      </nav>
-    </div>
+    <nav class="nav">
+      <nuxt-link
+        to="/contact"
+      >
+        {{ data.nav_label }}
+      </nuxt-link>
+    </nav>
     <div>
       <homeRow
-        v-for="(row, i) in rows"
+        v-for="(row, i) in data.body"
         :key="i"
         :data="row.items"
       />
@@ -24,10 +22,18 @@ import homeRow from '~/components/home/home-row'
 
 export default {
   props: {
-    rows: {
-      type: Array,
-      default: () => []
+    data: {
+      type: Object,
+      default: () => {}
     }
   }
 }
 </script>
+
+<style lang="scss">
+@import '~/assets/styles/variables/layout';
+
+.home-page {
+  padding-top: $page-padding-top;
+}
+</style>

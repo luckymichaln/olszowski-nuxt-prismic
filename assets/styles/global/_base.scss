@@ -43,5 +43,12 @@ a:hover {
   width: 100%;
   max-width: $container-width;
   text-align: right;
+  font-size: 22px;
   font-weight: 600;
+  pointer-events: none;
+  padding: 0 15px;
+
+  a {
+    pointer-events: auto;
+  }
 }

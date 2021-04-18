@@ -8,7 +8,7 @@
         <nuxt-link
           to="/"
         >
-          Work
+          {{ data.nav_label }}
         </nuxt-link>
       </nav>
 
@@ -39,6 +39,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '~/assets/styles/variables/layout';
+
+.project-page {
+  padding-top: $page-padding-top;
+}
 
 </style>

@@ -87,10 +87,8 @@ export default {
 .contact-page {
   height: 100vh;
   width: 100vw;
-  color: white;
   padding-top: $page-padding-top;
   font-size: 22px;
-  background: black;
 
   &__inner {
     background: black;

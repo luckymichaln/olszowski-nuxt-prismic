@@ -46,7 +46,7 @@ export const mutations = {
 }
 
 export const getters = {
-  homePageData: state => state.singlePageData.homepage ? state.singlePageData.homepage.body : null,
+  homePageData: state => state.singlePageData.homepage ? state.singlePageData.homepage : null,
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
   projectsData: state => state.projectsData,
 }

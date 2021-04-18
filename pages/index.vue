@@ -1,5 +1,7 @@
 <template>
-  <home :rows="homePageData"/>
+  <home
+    :data="homePageData"
+  />
 </template>
 
 <script>
@@ -15,6 +17,10 @@
 
     computed: {
       ...mapGetters('pages', ['homePageData']),
+    },
+
+    mounted () {
+      console.log(this.homePageData)
     },
 
     components: {
