@@ -3,7 +3,8 @@ export const state = () => ({
     homepage: null,
     contactpage: null
   },
-  projectsData: {}
+  projectsData: {},
+  currentProject: ''
 })
 
 export const actions = {
@@ -37,6 +38,10 @@ export const mutations = {
     if (!state.projectsData[`${uid}`]) {
       state.projectsData[`${uid}`] = data;
     }
+  },
+
+  SET_CURRENT_PROJECT(state, { data }) {
+    state.currentProject = data
   }
 }
 

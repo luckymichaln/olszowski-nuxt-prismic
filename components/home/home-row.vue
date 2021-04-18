@@ -1,8 +1,8 @@
 <template>
   <section class="home-row">
     <homeRowImage
-      v-for="image in data"
-      :key="image.project.id"
+      v-for="(image, index) in data"
+      :key="image.project.id + index"
       :data="image"
     />
   </section>
@@ -17,10 +17,6 @@ export default {
       type: Array,
       default: () => []
     }
-  },
-
-  mounted () {
-    console.log(this.data, 'data home row')
   }
 }
 </script>
@@ -29,5 +25,6 @@ export default {
   .home-row {
     display: flex;
     flex-flow: nowrap;
+    line-height: 0;
   }
 </style>

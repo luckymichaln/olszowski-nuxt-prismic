@@ -17,10 +17,6 @@
       ...mapGetters('pages', ['homePageData']),
     },
 
-    mounted() {
-      console.log(this.homePageData, 'homePageData')
-    },
-
     components: {
       home
     }
