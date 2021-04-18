@@ -16,18 +16,5 @@ export default {
   computed: {
     ...mapGetters('pages', ['contactPageData'])
   },
-
-  mounted() {
-      console.log(this.contactPageData, 'contactPageData')
-    },
 }
 </script>
-
-<style lang="scss">
-  .contact-page {
-    height: 100vh;
-    width: 100vw;
-    color: white;
-    background: black;
-  }
-</style>

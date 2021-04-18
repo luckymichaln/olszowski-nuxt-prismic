@@ -24,6 +24,9 @@ export default {
 
 <style lang="scss">
 .home-row-image {
+  display: flex;
+  height: 100%;
+
   img {
     width: 100%;;
   }
