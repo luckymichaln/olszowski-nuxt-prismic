@@ -4,7 +4,8 @@ export const state = () => ({
     contactpage: null
   },
   projectsData: {},
-  currentProject: ''
+  currentProject: '',
+  socialNav: null,
 })
 
 export const actions = {
@@ -27,6 +28,22 @@ export const actions = {
       console.error('error retrieving single page data:', { err, pageType })
     }
   },
+
+  async GET_SOCIAL_NAV({ commit }) {
+    try {
+      let doc = {}
+      const result = await this.$prismic.api.getSingle('social')
+      doc = result.data
+
+      if (doc) {
+        commit('SET_SOCIAL_NAV', { data: doc })
+        console.log(doc, 'dovvvv')
+      }
+
+    } catch (err) {
+      console.error('error retrieving social nav', { err })
+    }
+  }
 }
 
 export const mutations = {
@@ -40,6 +57,10 @@ export const mutations = {
     }
   },
 
+  SET_SOCIAL_NAV(state, { data }) {
+    state.socialNav = data
+  },
+
   SET_CURRENT_PROJECT(state, { data }) {
     state.currentProject = data
   }
@@ -49,4 +70,5 @@ export const getters = {
   homePageData: state => state.singlePageData.homepage ? state.singlePageData.homepage : null,
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
   projectsData: state => state.projectsData,
+  socialNav: state => state.socialNav,
 }

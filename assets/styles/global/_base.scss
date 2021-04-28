@@ -8,7 +8,16 @@ html {
 }
 
 img {
-  max-width: 100%
+  max-width: 100%;
+
+  &.lazyLoad {
+    transition: .124s;
+    opacity: 0;
+
+    &.isLoaded {
+      opacity: 1;
+    }
+  }
 }
 
 body {
@@ -16,7 +25,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  font-size: 16px;
 }
 
 strong,
@@ -43,7 +51,7 @@ a:hover {
   width: 100%;
   max-width: $container-width;
   text-align: right;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
   pointer-events: none;
   padding: 0 15px;

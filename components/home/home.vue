@@ -14,11 +14,13 @@
         :data="row.items"
       />
     </div>
+    <socialNav />
   </div>
 </template>
 
 <script>
 import homeRow from '~/components/home/home-row'
+import socialNav from '~/components/social/social-nav'
 
 export default {
   props: {

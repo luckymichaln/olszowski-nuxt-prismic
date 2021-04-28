@@ -1,5 +1,7 @@
 <template>
-  <contact :data="contactPageData"/>
+  <contact
+    :data="contactPageData"
+  />
 </template>
 
 <script>
@@ -10,6 +12,10 @@ export default {
   async asyncData({ store }) {
     if (!store.getters['pages/contactPageData']) {
       await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'contactpage' })
+    }
+
+    if (!store.state.socialNav) {
+      await store.dispatch('pages/GET_SOCIAL_NAV')
     }
   },
 

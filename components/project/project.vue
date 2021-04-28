@@ -13,6 +13,7 @@
       </nav>
 
       <prismic-rich-text
+        class="project-page__text"
         :field="data.project_info"
       />
     </div>
@@ -22,7 +23,6 @@
       :key="index"
       :data="row"
     />
-
   </div>
 </template>
 
@@ -44,6 +44,11 @@ export default {
 
 .project-page {
   padding-top: $page-padding-top;
-}
+  font-size: 22px;
 
+  &__text {
+    margin-bottom: 120px;
+    text-transform: uppercase;
+  }
+}
 </style>
