@@ -50,20 +50,22 @@ export default {
     },
   },
 
-  generate: {
-    async routes() {
-      // const client = Prismic.client(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.token })
-      // const servicePages = Prismic.Predicates.at('document.type', 'service_page')
-      // const projectPages = Prismic.Predicates.at('document.type', 'projects_single')
-      // const serviceResponse = await client.query(servicePages)
-      // const projectResponse = await client.query(projectPages)
-      // /*logger.info('hi there. response=', response)*/
+  target: 'static',
 
-      // const allServicesRoutes = serviceResponse.results.map(el => `/services/${el.uid}/`)
-      // const allProjectRoutes = projectResponse.results.map(el => `/projects/${el.uid}/`)
-      // return [...allServicesRoutes, ...allProjectRoutes]
-    }
-  },
+  // generate: {
+  // async routes() {
+  // const client = Prismic.client(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.token })
+  // const servicePages = Prismic.Predicates.at('document.type', 'service_page')
+  // const projectPages = Prismic.Predicates.at('document.type', 'projects_single')
+  // const serviceResponse = await client.query(servicePages)
+  // const projectResponse = await client.query(projectPages)
+  // /*logger.info('hi there. response=', response)*/
+
+  // const allServicesRoutes = serviceResponse.results.map(el => `/services/${el.uid}/`)
+  // const allProjectRoutes = projectResponse.results.map(el => `/projects/${el.uid}/`)
+  // return [...allServicesRoutes, ...allProjectRoutes]
+  // }
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
