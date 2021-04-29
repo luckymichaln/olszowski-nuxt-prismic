@@ -45,13 +45,13 @@ a:hover {
 
 .nav {
   position: fixed;
-  top: 60px;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: $container-width;
   text-align: right;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   pointer-events: none;
   padding: 0 15px;

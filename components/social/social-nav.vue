@@ -42,12 +42,13 @@ export default {
 
   .social-nav {
     position: fixed;
-    bottom: 20px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: $container-width;
     padding: 0 15px;
+    font-size: 18px;
 
     ul {
       display: flex;
