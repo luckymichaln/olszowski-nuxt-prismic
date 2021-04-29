@@ -49,6 +49,7 @@ export default {
     max-width: $container-width;
     padding: 0 15px;
     font-size: 18px;
+    text-transform: uppercase;
 
     ul {
       display: flex;
