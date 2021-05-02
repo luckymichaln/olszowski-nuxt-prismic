@@ -19,7 +19,6 @@ export default {
       type: Object,
       default: () => {}
     },
-    setPagePosition: Function,
   }
 }
 </script>

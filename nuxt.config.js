@@ -50,8 +50,6 @@ export default {
     },
   },
 
-  target: 'static',
-
   // generate: {
   // async routes() {
   // const client = Prismic.client(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.token })
@@ -68,6 +66,5 @@ export default {
   // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }
