@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <nav class="social-nav">
-      <ul v-if="socialNav">
+      <ul v-if="homePageData.social">
         <li
-          v-for="(el, i) in socialNav.social_links"
+          v-for="(el, i) in homePageData.social"
           :key="i"
         >
           <prismic-link
-            :field="el.link"
+            :field="el.social_link"
           >
-            {{ linkLabel(el.link.url) }}
+            {{ linkLabel(el.social_link.url) }}
           </prismic-link>
         </li>
       </ul>
@@ -22,17 +22,22 @@ import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters('pages', ['socialNav'])
+    ...mapGetters('pages', ['homePageData'])
   },
 
   methods: {
     linkLabel(url) {
       console.log(url)
       if (url) {
-        const label = url.split('//')[1].split('.')[0]
+        const chunk = url.split('//')[1].split('.')[0] === 'www' ? url.split('//')[1].split('.')[1] : url.split('//')[1].split('.')[0]
+        const label = chunk.split('.')[0]
         return label.charAt(0).toUpperCase() + label.slice(1)
       }
     }
+  },
+
+  mounted() {
+    console.log(this.homePageData, 'homePageDatahomePageDatahomePageData')
   }
 }
 </script>
@@ -47,15 +52,20 @@ export default {
     transform: translateX(-50%);
     width: 100%;
     max-width: $container-width;
-    padding: 0 15px;
+    padding: 0 $container-padding;
     font-size: 18px;
     text-transform: uppercase;
+    pointer-events: none;
 
     ul {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       font-weight: 600;
+    }
+
+    li {
+      pointer-events: auto;
     }
   }
 </style>

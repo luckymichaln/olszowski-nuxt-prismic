@@ -22,10 +22,6 @@ export default {
     if (!store.state.pages.projectsData[`${route.params.uid}`]) {
       await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'project', uid: route.params.uid })
     }
-
-    if (!store.state.socialNav) {
-      await store.dispatch('pages/GET_SOCIAL_NAV')
-    }
   },
 
   computed: {

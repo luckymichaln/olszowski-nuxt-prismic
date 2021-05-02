@@ -13,10 +13,6 @@ export default {
     if (!store.getters['pages/contactPageData']) {
       await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'contactpage' })
     }
-
-    if (!store.state.socialNav) {
-      await store.dispatch('pages/GET_SOCIAL_NAV')
-    }
   },
 
   computed: {

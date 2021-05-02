@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="project-page"
-    :style="{ backgroundColor: data.background_color, color: data.text_color }"
-  >
+  <div class="project-page">
     <div class="container">
       <nav class="nav">
         <nuxt-link
@@ -30,11 +27,28 @@
 import projectRow from '~/components/project/project-row'
 
 export default {
+  data () {
+    return {
+      body: null,
+    }
+  },
+
   props: {
     data: {
       type: Object,
       default: () => {}
     }
+  },
+
+  beforeMount() {
+    this.body = document.getElementsByTagName('body')[0];
+    this.body.style.backgroundColor = this.data.background_color;
+    this.body.style.color = this.data.text_color;
+  },
+
+  beforeDestroy() {
+    this.body.style.backgroundColor = '#fff'
+    this.body.style.color = '#000'
   }
 }
 </script>

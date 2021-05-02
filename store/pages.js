@@ -6,6 +6,7 @@ export const state = () => ({
   projectsData: {},
   currentProject: '',
   socialNav: null,
+  pagePosition: null,
 })
 
 export const actions = {
@@ -63,12 +64,16 @@ export const mutations = {
 
   SET_CURRENT_PROJECT(state, { data }) {
     state.currentProject = data
-  }
+  },
+
+  SET_PAGE_POSITION(state, { data }) {
+    state.pagePosition = data
+  },
 }
 
 export const getters = {
   homePageData: state => state.singlePageData.homepage ? state.singlePageData.homepage : null,
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
   projectsData: state => state.projectsData,
-  socialNav: state => state.socialNav,
+  pagePosition: state => state.pagePosition
 }

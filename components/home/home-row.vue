@@ -4,6 +4,7 @@
       v-for="(image, index) in data"
       :key="image.project.id + index"
       :data="image"
+      :setPagePosition="setPagePosition"
     />
   </section>
 </template>
@@ -16,7 +17,9 @@ export default {
     data: {
       type: Array,
       default: () => []
-    }
+    },
+
+    setPagePosition: Function
   }
 }
 </script>
