@@ -50,6 +50,8 @@ export default {
     },
   },
 
+  target: 'static',
+
   // generate: {
   // async routes() {
   // const client = Prismic.client(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.token })

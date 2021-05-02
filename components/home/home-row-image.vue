@@ -3,7 +3,7 @@
     class="home-row-image"
     :field="data.project"
     :style="{width: `${data.cover_width}%`, marginLeft: `${data.offset_left}%`, marginTop: `${data.offset_top}%`}"
-
+    @mousedown.native="setPagePosition"
   >
     <img
       :src="data.cover_sd.url"
@@ -19,6 +19,7 @@ export default {
       type: Object,
       default: () => {}
     },
+    setPagePosition: Function,
   }
 }
 </script>
