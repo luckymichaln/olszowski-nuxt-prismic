@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="contact-page"
-    :style="{ backgroundColor: data.background_color, color: data.text_color }"
-  >
+  <div class="contact-page">
     <div class="contact-page__inner">
       <div class="container">
         <nav class="nav">
@@ -73,10 +70,21 @@ export default {
     }
   },
 
+  beforeMount() {
+    this.body = document.getElementsByTagName('body')[0];
+    this.body.style.backgroundColor = this.data.background_color;
+    this.body.style.color = this.data.text_color;
+  },
+
   mounted () {
     const yearNode = this.$refs.year;
     const copyNode = this.$refs.copy;
     copyNode.children[0].prepend(yearNode);
+  },
+
+  beforeDestroy() {
+    this.body.style.backgroundColor = '#fff'
+    this.body.style.color = '#000'
   }
 }
 </script>
