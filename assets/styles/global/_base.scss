@@ -12,7 +12,7 @@ img {
   max-width: 100%;
 
   &.lazyLoad {
-    transition: .124s;
+    transition: .024s;
     opacity: 0;
 
     &.isLoaded {

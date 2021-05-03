@@ -11,7 +11,7 @@
       <homeRow
         v-for="(row, i) in data.body"
         :key="i"
-        :data="row.items"
+        :data="row"
         :setPagePosition="setPagePosition"
       />
     </div>
@@ -32,11 +32,6 @@ export default {
     },
   },
 
-  beforeMount() {
-
-    // this.setActiveSessionPosition();
-  },
-
   mounted() {
     console.log(this.pagePosition, 'pagePosition')
     document.getElementsByTagName("body")[0].style.opacity = 0;
@@ -46,6 +41,8 @@ export default {
       document.getElementsByTagName("body")[0].style.opacity = 1;
       console.log('Showed')
     }, 70);
+
+    console.log(this.data, 'hover_interval')
   },
 
   computed: {

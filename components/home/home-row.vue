@@ -4,6 +4,7 @@
       v-for="(image, index) in data"
       :key="image.project.id + index"
       :data="image"
+      :hoverInterval="image.hover_interval"
       :setPagePosition="setPagePosition"
     />
   </section>
@@ -20,6 +21,10 @@ export default {
     },
 
     setPagePosition: Function
+  },
+
+  mounted() {
+    console.log(this.data, 'dsd')
   }
 }
 </script>

@@ -72,7 +72,34 @@ export const mutations = {
 }
 
 export const getters = {
-  homePageData: state => state.singlePageData.homepage ? state.singlePageData.homepage : null,
+  homePageData: state => {
+    if (!state.singlePageData.homepage) { return null }
+
+    console.log(state.singlePageData.homepage, 'state.singlePageData.homepagestate.singlePageData.homepage')
+
+    return {
+      ...state.singlePageData.homepage,
+      body: state.singlePageData.homepage.body.map(row => {
+        return row.items.map(cover => {
+          const { hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5 } = cover;
+          const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5].filter(el => el.url);
+
+          console.log(cover.hover_interval, 'hover_interval')
+
+          return {
+            cover_sd: cover.cover_sd,
+            cover_hd: cover.cover_hd,
+            cover_width: cover.cover_width,
+            offset_left: cover.offset_left,
+            offset_top: cover.offset_top,
+            project: cover.project,
+            ...(hovers.length && { hover_interval: cover.hover_interval || 500 }),
+            ...(hovers.length && { hovers })
+          }
+        })
+      }),
+    }
+  },
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
   projectsData: state => state.projectsData,
   pagePosition: state => state.pagePosition
