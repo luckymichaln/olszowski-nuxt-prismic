@@ -48,21 +48,26 @@ export default {
     },
   },
 
+  mounted() {
+    if (this.data.hovers) {
+      this.intervalImages = this.$refs.hovers.children
+    }
+  },
+
   methods: {
     manageHovers(int) {
-      const images = this.$refs.hovers.children;
-      images[0].style.zIndex = '10'
+      this.intervalImages[0].style.zIndex = '10'
       setTimeout(() => {
-        Array(images)[0].forEach(el => el.style.display = 'block')
-      }, 10);
+        Array(this.intervalImages)[0].forEach(el => el.style.visibility = 'visible')
+      }, 5);
 
       let i = 1
       let zI = 11
       this.intervalId = setInterval(() => {
-        if (i >= images.length) { i = 0 }
+        if (i >= this.intervalImages.length) { i = 0 }
 
-        images[i].style.zIndex = `${zI}`;
-        console.log(images[i], i, zI)
+        this.intervalImages[i].style.zIndex = `${zI}`;
+        console.log(this.intervalImages[i], i, zI)
         i++
         zI++
       }, int)
@@ -72,7 +77,7 @@ export default {
       clearInterval(this.intervalId)
       const images = this.$refs.hovers.children;
       Array(images)[0].forEach(el => {
-        el.style.display = 'none'
+        el.style.visibility = 'hidden'
         el.style.zIndex = this.intervalIndex
       })
     }
@@ -96,9 +101,8 @@ export default {
       top: 0;
       left: 0;
       width: 100%;
-      /* height: 100%; */
       object-fit: cover;
-      display: none;
+      visibility: hidden;
     }
   }
 }
