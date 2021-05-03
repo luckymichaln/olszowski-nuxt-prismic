@@ -39,10 +39,7 @@ export default {
 
     setTimeout(() => {
       document.getElementsByTagName("body")[0].style.opacity = 1;
-      console.log('Showed')
     }, 70);
-
-    console.log(this.data, 'hover_interval')
   },
 
   computed: {
@@ -59,20 +56,14 @@ export default {
     setActiveSessionPosition() {
       let body = document.getElementsByTagName("body")[0];
       let height = `${this.pagePosition}`;
-      console.log(height, 'la')
       let pageHeight = parseInt(height) + 1000;
-      console.log(pageHeight, 'pageHeight')
 
       if (this.pagePosition) {
-        console.log(body.style.height, 'body.style.height pre')
         body.style.height = `${pageHeight}px`;
-        console.log(body.style.height, 'body.style.height post')
 
         setTimeout(() => {
           window.scrollTo(0, this.pagePosition);
         }, 30);
-
-        console.log(this.pagePosition, 'i scrolled')
 
         setTimeout(() => {
           body.style.height = "auto";

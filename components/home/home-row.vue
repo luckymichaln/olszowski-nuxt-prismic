@@ -22,10 +22,6 @@ export default {
 
     setPagePosition: Function
   },
-
-  mounted() {
-    console.log(this.data, 'dsd')
-  }
 }
 </script>
 

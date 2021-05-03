@@ -38,7 +38,6 @@ export const actions = {
 
       if (doc) {
         commit('SET_SOCIAL_NAV', { data: doc })
-        console.log(doc, 'dovvvv')
       }
 
     } catch (err) {
@@ -75,16 +74,12 @@ export const getters = {
   homePageData: state => {
     if (!state.singlePageData.homepage) { return null }
 
-    console.log(state.singlePageData.homepage, 'state.singlePageData.homepagestate.singlePageData.homepage')
-
     return {
       ...state.singlePageData.homepage,
       body: state.singlePageData.homepage.body.map(row => {
         return row.items.map(cover => {
           const { hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5 } = cover;
           const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5].filter(el => el.url);
-
-          console.log(cover.hover_interval, 'hover_interval')
 
           return {
             cover_sd: cover.cover_sd,
