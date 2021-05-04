@@ -48,6 +48,7 @@ export default {
     apiOptions: {
       access_token: PrismicConfig.token,
     },
+    preview: '/preview'
   },
 
   target: 'static',
