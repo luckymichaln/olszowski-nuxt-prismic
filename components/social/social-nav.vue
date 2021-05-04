@@ -50,6 +50,7 @@ export default {
     bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 9999;
     width: 100%;
     max-width: $container-width;
     padding: 0 $container-padding;

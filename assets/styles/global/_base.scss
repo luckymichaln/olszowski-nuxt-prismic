@@ -48,6 +48,7 @@ a:hover {
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 99999;
   width: 100%;
   max-width: $container-width;
   text-align: right;
