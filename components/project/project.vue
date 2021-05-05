@@ -1,5 +1,8 @@
 <template>
-  <div class="project-page">
+  <div
+    class="project-page"
+    :style="{ paddingTop: `${data.offset_top}%` }"
+  >
     <div class="container">
       <nav class="nav">
         <nuxt-link
@@ -57,8 +60,7 @@ export default {
 @import '~/assets/styles/variables/layout';
 
 .project-page {
-  padding-top: $page-padding-top;
-  font-size: 22px;
+  padding-bottom: $page-padding-bottom;
 
   &__text {
     margin-bottom: 120px;

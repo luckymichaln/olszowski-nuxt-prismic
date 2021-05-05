@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'olszowski-nuxt-prismic',
+    title: 'Tomek Olszowski | Photographer',
     htmlAttrs: {
       lang: 'en'
     },

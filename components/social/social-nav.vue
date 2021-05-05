@@ -27,7 +27,6 @@ export default {
 
   methods: {
     linkLabel(url) {
-      console.log(url)
       if (url) {
         const chunk = url.split('//')[1].split('.')[0] === 'www' ? url.split('//')[1].split('.')[1] : url.split('//')[1].split('.')[0]
         const label = chunk.split('.')[0]
@@ -35,10 +34,6 @@ export default {
       }
     }
   },
-
-  mounted() {
-    console.log(this.homePageData, 'homePageDatahomePageDatahomePageData')
-  }
 }
 </script>
 
@@ -54,7 +49,6 @@ export default {
     width: 100%;
     max-width: $container-width;
     padding: 0 $container-padding;
-    font-size: 18px;
     text-transform: uppercase;
     pointer-events: none;
 
@@ -62,7 +56,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      font-weight: 600;
+      font-weight: 800;
     }
 
     li {

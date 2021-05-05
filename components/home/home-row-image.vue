@@ -67,7 +67,6 @@ export default {
         if (i >= this.intervalImages.length) { i = 0 }
 
         this.intervalImages[i].style.zIndex = `${zI}`;
-        console.log(this.intervalImages[i], i, zI)
         i++
         zI++
       }, int)

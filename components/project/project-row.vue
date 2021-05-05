@@ -1,5 +1,8 @@
 <template>
-  <section class="project-row">
+  <section
+    class="project-row"
+    :style="{ marginBottom: `${data.primary.margin_bottom}%` }"
+  >
     <div
       v-for="image in data.items"
       :key="image.image_sd.url"
@@ -21,7 +24,7 @@ export default {
       type: Object,
       default: () => {}
     }
-  }
+  },
 }
 </script>
 

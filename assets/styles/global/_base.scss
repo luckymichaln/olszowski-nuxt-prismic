@@ -24,6 +24,7 @@ img {
 body {
   font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
+  font-size: 36px;
   font-weight: 400;
 }
 
@@ -52,8 +53,7 @@ a:hover {
   width: 100%;
   max-width: $container-width;
   text-align: right;
-  font-size: 18px;
-  font-weight: 600;
+  font-weight: 800;
   pointer-events: none;
   padding: 0 $container-padding;
   text-transform: uppercase;

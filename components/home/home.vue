@@ -1,11 +1,18 @@
 <template>
-  <div class="home-page">
+  <div
+    class="home-page"
+    :style="{ paddingTop: `${data.offset_top}%` }"
+  >
     <nav class="nav">
-      <nuxt-link
-        to="/contact"
-      >
-        {{ data.nav_label }}
-      </nuxt-link>
+      <p class="logo">Tomek Olszowski</p>
+      <div class="nav__link-wrapper">
+        <nuxt-link
+          to="/contact"
+          @mousedown.native="setPagePosition"
+        >
+          {{ data.nav_label }}
+        </nuxt-link>
+      </div>
     </nav>
     <div>
       <homeRow
@@ -33,7 +40,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.pagePosition, 'pagePosition')
+    console.log(this.data,'lsa')
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
 
@@ -49,7 +56,6 @@ export default {
   methods: {
     setPagePosition() {
       let position = window.scrollY;
-      console.log(position, 'positionposition')
       this.$store.commit("pages/SET_PAGE_POSITION", { data: position });
     },
 
@@ -75,9 +81,30 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~/assets/styles/variables/layout';
+.home-page .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-.home-page {
-  padding-top: $page-padding-top;
+  &__link-wrapper {
+    position: relative;
+
+    &:hover {
+      a {
+        opacity: 0;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -37px;
+        left: 0;
+        width: 100%;
+        height: 111px;
+        background: url('~/assets/icons/to_arrow.svg') center center;
+        background-size: cover;
+      }
+    }
+  }
 }
 </style>

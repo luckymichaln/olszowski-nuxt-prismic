@@ -3,11 +3,13 @@
     <div class="contact-page__inner">
       <div class="container">
         <nav class="nav">
-          <nuxt-link
-            to="/"
-          >
-            {{ data.nav_label }}
-          </nuxt-link>
+          <div class="nav__link-wrapper">
+            <nuxt-link
+              to="/"
+            >
+              {{ data.nav_label }}
+            </nuxt-link>
+          </div>
         </nav>
         <div class="contact-page__main">
           <header class="contact-page__header">
@@ -95,8 +97,7 @@ export default {
 .contact-page {
   height: 100vh;
   width: 100vw;
-  padding-top: $page-padding-top;
-  font-size: 22px;
+  padding-top: 80px;
 
   &__inner {
     background: black;
@@ -141,6 +142,29 @@ export default {
 
   .column-box:not(:last-of-type) {
     margin-bottom: 30px;
+  }
+
+  .nav__link-wrapper {
+    position: relative;
+    display: inline-block;
+
+    &:hover {
+      a {
+        /* opacity: 0; */
+      }
+
+      /* &::before {
+        content: '';
+        position: absolute;
+        top: -37px;
+        left: 0;
+        transform: rotate(180deg);
+        width: 100%;
+        height: 66px;
+        background: url('~/assets/icons/to_arrow.svg') center center;
+        background-size: cover;
+      } */
+    }
   }
 }
 </style>
