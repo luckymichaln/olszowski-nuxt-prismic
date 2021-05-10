@@ -30,5 +30,15 @@ export default {
     display: flex;
     flex-flow: nowrap;
     line-height: 0;
+
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+
+      &-image {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 20px !important;
+      }
+    }
   }
 </style>

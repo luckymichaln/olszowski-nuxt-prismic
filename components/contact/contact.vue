@@ -7,11 +7,25 @@
             <nuxt-link
               to="/"
             >
-              {{ data.nav_label }}
+              <div class="wrapper-inner">
+                <span>
+                  {{ data.nav_label }}
+                </span>
+                <svg width="173" height="111" xmlns="http://www.w3.org/2000/svg" id="arrow">
+                  <g>
+                    <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
+                    <line stroke="currentColor" stroke-width="25" id="svg_3" y2="74.87087" x2="213.4426" y1="74.87087" x1="0.78523" fill="none"/>
+                    <line transform="rotate(-45 187.448 102.946)" stroke="currentColor" stroke-width="25" id="svg_5" y2="102.94626" x2="239.76579" y1="102.94626" x1="135.13134" fill="none"/>
+                  </g>
+                </svg>
+              </div>
             </nuxt-link>
           </div>
         </nav>
-        <div class="contact-page__main">
+        <div
+          class="contact-page__main"
+          ref="pageMainNode"
+        >
           <header class="contact-page__header">
             <prismic-rich-text
               :field="data.hero_heading"
@@ -68,20 +82,31 @@ export default {
 
   data () {
     return {
-      currentYear: new Date().getFullYear()
+      currentYear: new Date().getFullYear(),
+      arrowNode: `<g>
+                    <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
+                    <line stroke="currentColor" stroke-width="25" id="svg_3" y2="74.87087" x2="213.4426" y1="74.87087" x1="0.78523" fill="none"/>
+                    <line transform="rotate(-45 187.448 102.946)" stroke="currentColor" stroke-width="25" id="svg_5" y2="102.94626" x2="239.76579" y1="102.94626" x1="135.13134" fill="none"/>
+                  </g>`
     }
   },
 
   beforeMount() {
-    this.body = document.getElementsByTagName('body')[0];
-    this.body.style.backgroundColor = this.data.background_color;
-    this.body.style.color = this.data.text_color;
+    this.body = document.getElementsByTagName('body')[0]
+    this.body.style.backgroundColor = this.data.background_color
+    this.body.style.color = this.data.text_color
   },
 
   mounted () {
-    const yearNode = this.$refs.year;
-    const copyNode = this.$refs.copy;
-    copyNode.children[0].prepend(yearNode);
+    const yearNode = this.$refs.year
+    const copyNode = this.$refs.copy
+    copyNode.children[0].prepend(yearNode)
+
+    const allLinks = document.querySelectorAll('.contact-page__main a')
+    allLinks.forEach(node => {
+      const svg = document.getElementById('arrow').cloneNode(true)
+      node.prepend(document.createElement('div').appendChild(svg))
+    })
   },
 
   beforeDestroy() {
@@ -107,6 +132,24 @@ export default {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 160px);
+
+    a {
+      position: relative;
+
+      svg {
+        display: none;
+        position: absolute;
+        top: -88px;
+        right: -142px;
+        transform: scale(0.16) rotate(-45deg);
+        width: 240px;
+        height: 160px;
+      }
+
+      &:hover svg {
+        display: block;
+      }
+    }
   }
 
   &__header {
@@ -148,22 +191,26 @@ export default {
     position: relative;
     display: inline-block;
 
-    &:hover {
-      a {
-        /* opacity: 0; */
+    .wrapper-inner {
+      &:hover {
+        span {
+          opacity: 0;
+        }
+
+        svg {
+          display: block;
+        }
       }
 
-      /* &::before {
-        content: '';
-        position: absolute;
-        top: -37px;
-        left: 0;
-        transform: rotate(180deg);
-        width: 100%;
-        height: 66px;
-        background: url('~/assets/icons/to_arrow.svg') center center;
-        background-size: cover;
-      } */
+      svg {
+          position: absolute;
+          top: -59px;
+          left: -89px;
+          transform: rotate(180deg) scale(0.74);
+          width: 234px;
+          height: 151px;
+          display: none;
+      }
     }
   }
 }

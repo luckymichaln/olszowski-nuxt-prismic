@@ -49,36 +49,48 @@ export default {
   },
 
   mounted() {
-    if (this.data.hovers) {
+    if (this.data.hovers && this.$refs.hovers.children) {
       this.intervalImages = this.$refs.hovers.children
     }
   },
 
+  beforeDestroy() {
+    this.intervalImages = null
+  },
+
   methods: {
     manageHovers(int) {
-      this.intervalImages[0].style.zIndex = '10'
-      setTimeout(() => {
-        Array(this.intervalImages)[0].forEach(el => el.style.visibility = 'visible')
-      }, 5);
+      if (window.innerWidth >= 768) {
+        this.intervalImages[0].style.zIndex = '10'
+        setTimeout(() => {
+          Array(this.intervalImages)[0].forEach(el => el.style.visibility = 'visible')
+        }, 5);
 
-      let i = 1
-      let zI = 11
-      this.intervalId = setInterval(() => {
-        if (i >= this.intervalImages.length) { i = 0 }
+        let i = 1
+        let zI = 11
+        this.intervalId = setInterval(() => {
+          if (this.intervalImages) {
+            if (i >= this.intervalImages.length) { i = 0 }
 
-        this.intervalImages[i].style.zIndex = `${zI}`;
-        i++
-        zI++
-      }, int)
+            this.intervalImages[i].style.zIndex = `${zI}`;
+            i++
+            zI++
+          }
+        }, int)
+      }
     },
 
     resetInterval() {
-      clearInterval(this.intervalId)
-      const images = this.$refs.hovers.children;
-      Array(images)[0].forEach(el => {
-        el.style.visibility = 'hidden'
-        el.style.zIndex = this.intervalIndex
-      })
+      if (window.innerWidth >= 768) {
+        clearInterval(this.intervalId)
+        if (this.$refs.hovers) {
+          const images = this.$refs.hovers.children;
+          Array(images)[0].forEach(el => {
+            el.style.visibility = 'hidden'
+            el.style.zIndex = this.intervalIndex
+          })
+        }
+      }
     }
   }
 }
