@@ -38,9 +38,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~/assets/styles/variables/layout';
+  @import '~/assets/styles/variables/layout';
 
   .social-nav {
+    display: none;
     position: fixed;
     bottom: 60px;
     left: 50%;
@@ -61,6 +62,10 @@ export default {
 
     li {
       pointer-events: auto;
+    }
+
+    @media (min-width: 767px) {
+      display: block;
     }
   }
 </style>

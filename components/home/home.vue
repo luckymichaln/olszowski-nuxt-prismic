@@ -10,7 +10,18 @@
           to="/contact"
           @mousedown.native="setPagePosition"
         >
-          {{ data.nav_label }}
+          <div class="wrapper-inner wrapper-inner--arrow">
+            <span>
+              {{ data.nav_label }}
+            </span>
+            <svg width="173" height="111" xmlns="http://www.w3.org/2000/svg" id="arrow">
+              <g>
+                <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
+                <line stroke="currentColor" stroke-width="25" id="svg_3" y2="74.87087" x2="213.4426" y1="74.87087" x1="0.78523" fill="none"/>
+                <line transform="rotate(-45 187.448 102.946)" stroke="currentColor" stroke-width="25" id="svg_5" y2="102.94626" x2="239.76579" y1="102.94626" x1="135.13134" fill="none"/>
+              </g>
+            </svg>
+          </div>
         </nuxt-link>
       </div>
     </nav>
@@ -22,7 +33,7 @@
         :setPagePosition="setPagePosition"
       />
     </div>
-    <socialNav />
+    <socialNav class="arrows-main" />
   </div>
 </template>
 
@@ -40,6 +51,12 @@ export default {
   },
 
   mounted() {
+    const allLinks = document.querySelectorAll('.social-nav a')
+    allLinks.forEach(node => {
+      const svg = document.getElementById('arrow').cloneNode(true)
+      node.prepend(document.createElement('div').appendChild(svg))
+    })
+
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
 
@@ -85,25 +102,9 @@ export default {
   align-items: center;
   justify-content: space-between;
 
-  &__link-wrapper {
-    position: relative;
-
-    &:hover {
-      a {
-        opacity: 0;
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: -37px;
-        left: 0;
-        width: 100%;
-        height: 111px;
-        background: url('~/assets/icons/to_arrow.svg') center center;
-        background-size: cover;
-      }
-    }
+  .wrapper-inner--arrow svg {
+    transform: rotate(0deg) scale(0.74);
+    left: -27px;
   }
 }
 </style>

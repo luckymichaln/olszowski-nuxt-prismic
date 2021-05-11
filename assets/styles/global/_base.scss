@@ -62,3 +62,47 @@ a:hover {
     pointer-events: auto;
   }
 }
+
+.wrapper-inner--arrow {
+  position: relative;
+
+  &:hover {
+    span {
+      opacity: 0;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  svg {
+      position: absolute;
+      top: -59px;
+      left: -89px;
+      transform: rotate(180deg) scale(0.74);
+      width: 234px;
+      height: 151px;
+      display: none;
+  }
+}
+
+.arrows-main {
+  a {
+    position: relative;
+
+    svg {
+      display: none;
+      position: absolute;
+      top: -88px;
+      right: -142px;
+      transform: scale(0.16) rotate(-45deg);
+      width: 240px;
+      height: 160px;
+    }
+
+    &:hover svg {
+      display: block;
+    }
+  }
+}

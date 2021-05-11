@@ -7,7 +7,7 @@
             <nuxt-link
               to="/"
             >
-              <div class="wrapper-inner">
+              <div class="wrapper-inner wrapper-inner--arrow">
                 <span>
                   {{ data.nav_label }}
                 </span>
@@ -23,7 +23,7 @@
           </div>
         </nav>
         <div
-          class="contact-page__main"
+          class="contact-page__main arrows-main"
           ref="pageMainNode"
         >
           <header class="contact-page__header">
@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import { arrowNode } from '~/const/const';
+
 export default {
   props: {
     data: {
@@ -83,11 +85,6 @@ export default {
   data () {
     return {
       currentYear: new Date().getFullYear(),
-      arrowNode: `<g>
-                    <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
-                    <line stroke="currentColor" stroke-width="25" id="svg_3" y2="74.87087" x2="213.4426" y1="74.87087" x1="0.78523" fill="none"/>
-                    <line transform="rotate(-45 187.448 102.946)" stroke="currentColor" stroke-width="25" id="svg_5" y2="102.94626" x2="239.76579" y1="102.94626" x1="135.13134" fill="none"/>
-                  </g>`
     }
   },
 
@@ -132,24 +129,6 @@ export default {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 160px);
-
-    a {
-      position: relative;
-
-      svg {
-        display: none;
-        position: absolute;
-        top: -88px;
-        right: -142px;
-        transform: scale(0.16) rotate(-45deg);
-        width: 240px;
-        height: 160px;
-      }
-
-      &:hover svg {
-        display: block;
-      }
-    }
   }
 
   &__header {
@@ -190,28 +169,6 @@ export default {
   .nav__link-wrapper {
     position: relative;
     display: inline-block;
-
-    .wrapper-inner {
-      &:hover {
-        span {
-          opacity: 0;
-        }
-
-        svg {
-          display: block;
-        }
-      }
-
-      svg {
-          position: absolute;
-          top: -59px;
-          left: -89px;
-          transform: rotate(180deg) scale(0.74);
-          width: 234px;
-          height: 151px;
-          display: none;
-      }
-    }
   }
 }
 </style>
