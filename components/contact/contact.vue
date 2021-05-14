@@ -72,8 +72,6 @@
 </template>
 
 <script>
-import { arrowNode } from '~/const/const';
-
 export default {
   props: {
     data: {
