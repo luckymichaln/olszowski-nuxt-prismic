@@ -119,10 +119,6 @@ export default {
   width: 100vw;
   padding-top: 80px;
 
-  &__inner {
-    background: black;
-  }
-
   &__main {
     display: flex;
     flex-direction: column;
