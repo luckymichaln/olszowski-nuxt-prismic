@@ -57,7 +57,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      font-weight: 800;
+      font-weight: 600;
     }
 
     li {
