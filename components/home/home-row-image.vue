@@ -94,7 +94,7 @@ export default {
               el.style.visibility = 'hidden'
               el.style.zIndex = this.intervalIndex
             })
-          }, 200);
+          }, 300);
         }
       }
     }
