@@ -99,6 +99,10 @@ export default {
 <style lang="scss">
 .home-row-image {
   position: relative;
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
 
   &__hovers {
     position: absolute;
