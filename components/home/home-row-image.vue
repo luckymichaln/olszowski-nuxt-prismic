@@ -61,6 +61,8 @@ export default {
   methods: {
     manageHovers(int) {
       if (window.innerWidth >= 768) {
+        const images = this.$refs.hovers;
+        images.classList.remove('hidden');
         this.intervalImages[0].style.zIndex = '10'
         setTimeout(() => {
           Array(this.intervalImages)[0].forEach(el => el.style.visibility = 'visible')
@@ -84,11 +86,15 @@ export default {
       if (window.innerWidth >= 768) {
         clearInterval(this.intervalId)
         if (this.$refs.hovers) {
-          const images = this.$refs.hovers.children;
-          Array(images)[0].forEach(el => {
-            el.style.visibility = 'hidden'
-            el.style.zIndex = this.intervalIndex
-          })
+          const imagesParent = this.$refs.hovers;
+          const images = imagesParent.children;
+          imagesParent.classList.add('hidden');
+          setTimeout(() => {
+            Array(images)[0].forEach(el => {
+              el.style.visibility = 'hidden'
+              el.style.zIndex = this.intervalIndex
+            })
+          }, 200);
         }
       }
     }
@@ -110,6 +116,10 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
+
+    &.hidden img {
+      visibility: hidden !important;
+    }
 
     img {
       position: absolute;
