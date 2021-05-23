@@ -123,7 +123,7 @@ export default {
   }
 
   &__info {
-    margin-bottom: 120px;
+    margin-top: 80px;
     text-transform: uppercase;
   }
 
