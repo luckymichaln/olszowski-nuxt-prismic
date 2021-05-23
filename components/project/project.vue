@@ -62,14 +62,14 @@ export default {
           content: this.data.body[0].items[0].image_sd.url
         },
         {
-          hid: 'og:image:secure_url',
-          property: 'og:image:secure_url',
-          content: this.data.body[0].items[0].image_sd.url
-        },
-        {
           hid: 'og:image:alt',
           property: 'og:image:alt',
           content: this.data.body[0].items[0].image_sd.alt
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://gracious-hoover-e9dca2.netlify.app'
         }
       ]
     }

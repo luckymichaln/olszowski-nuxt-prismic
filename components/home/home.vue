@@ -79,6 +79,11 @@ export default {
           hid: 'og:image:alt',
           property: 'og:image:alt',
           content: 'Porsche Cayman GTS'
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://gracious-hoover-e9dca2.netlify.app'
         }
       ]
     }

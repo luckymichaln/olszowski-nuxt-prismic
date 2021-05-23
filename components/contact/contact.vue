@@ -96,11 +96,6 @@ export default {
           property: 'og:image:secure_url',
           content: 'https://images.prismic.io/toshootingcarsv2/276a3b51-207f-4370-ba79-e8b65b5a271d_TomekOlszowski+Porsche_718_5.jpg?auto=compress,format'
         },
-        {
-          hid: 'og:image:alt',
-          property: 'og:image:alt',
-          content: 'Porsche Cayman GTS'
-        }
       ]
     }
   },
