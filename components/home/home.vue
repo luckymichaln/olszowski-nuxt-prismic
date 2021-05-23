@@ -139,6 +139,11 @@ export default {
   .wrapper-inner--arrow svg {
     transform: rotate(0deg) scale(0.74);
     left: -27px;
+
+    @media (min-width: 1350px) {
+      transform: rotate(0deg) scale(0.85);
+      left: -15px;
+    }
   }
 }
 </style>

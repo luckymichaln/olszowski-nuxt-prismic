@@ -3,7 +3,7 @@
     class="project-page"
     :style="{ paddingTop: `${data.offset_top}%` }"
   >
-    <div class="container">
+    <div class="container project-page__text">
       <nav class="nav">
         <div class="nav__link-wrapper">
           <nuxt-link
@@ -26,7 +26,7 @@
       </nav>
 
       <prismic-rich-text
-        class="project-page__text"
+        class="project-page__info"
         :field="data.project_info"
       />
     </div>
@@ -59,12 +59,17 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.data.body[0].items[0].image_sd.url
+          content: (this.data.social_image && this.data.social_image.url) ? this.data.social_image.url.split('?')[0] : null
+        },
+        {
+          hid: 'og:image_source',
+          property: 'og:image_source',
+          content: (this.data.social_image && this.data.social_image.url) ? this.data.social_image.url.split('?')[0] : null
         },
         {
           hid: 'og:image:alt',
           property: 'og:image:alt',
-          content: this.data.body[0].items[0].image_sd.alt
+          content: this.data.social_image.alt
         },
         {
           hid: 'og:url',
@@ -88,6 +93,10 @@ export default {
     }
   },
 
+  mounted() {
+    console.log(this.data, 'dta')
+  },
+
   beforeMount() {
     this.body = document.getElementsByTagName('body')[0];
     this.body.style.backgroundColor = this.data.background_color;
@@ -105,9 +114,15 @@ export default {
 @import '~/assets/styles/variables/layout';
 
 .project-page {
-  padding-bottom: $page-padding-bottom;
-
   &__text {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+  }
+
+  &__info {
     margin-bottom: 120px;
     text-transform: uppercase;
   }
@@ -117,24 +132,29 @@ export default {
     display: inline-block;
 
     .wrapper-inner {
-        &:hover {
-          span {
-            opacity: 0;
-          }
-
-          svg {
-            display: block;
-          }
+      &:hover {
+        span {
+          opacity: 0;
         }
 
         svg {
-          position: absolute;
-          top: -59px;
-          left: -89px;
-          transform: rotate(180deg) scale(0.74);
-          width: 234px;
-          height: 151px;
-          display: none;
+          display: block;
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: -59px;
+        left: -89px;
+        transform: rotate(180deg) scale(0.74);
+        width: 234px;
+        height: 151px;
+        display: none;
+
+        @media (min-width: 1350px) {
+          transform: rotate(180deg) scale(0.85);
+          left: -83px;
+        }
       }
     }
   }
