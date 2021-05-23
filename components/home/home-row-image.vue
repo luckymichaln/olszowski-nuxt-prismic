@@ -49,6 +49,11 @@ export default {
   },
 
   mounted() {
+    this.$refs.hovers.addEventListener('contextmenu', ev => {
+      if (ev.target.offsetParent.classList.contains('home-row-image__hovers')) {
+        ev.preventDefault();
+      }
+    })
     if (this.data.hovers && this.$refs.hovers.children) {
       this.intervalImages = this.$refs.hovers.children
     }

@@ -43,6 +43,38 @@
 import projectRow from '~/components/project/project-row'
 
 export default {
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Tomek Olszowski | Photographer'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Photographer born and based in Cracow, Poland. Tomek graduated from Architecture in 2005, but after a couple of years it became clear that it wasn’t entirely his cup of tea. As the visual side of the projects was always more interesting to him, he started exploring graphics by post graduating from Digital Graphics. In the meantime Tomek discovered automotive photography and started doing test shots in 2009. His enthusiasm for cars drove him to intensely push and discover new passion. During the following years Tomek shot many personal projects crafting location, studio and partly CGI techniques along with postproduction. In 2011 he printed his first portfolio book.'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.data.body[0].items[0].image_sd.url
+        },
+        {
+          hid: 'og:image:secure_url',
+          property: 'og:image:secure_url',
+          content: this.data.body[0].items[0].image_sd.url
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.data.body[0].items[0].image_sd.alt
+        }
+      ]
+    }
+  },
+
   data () {
     return {
       body: null,

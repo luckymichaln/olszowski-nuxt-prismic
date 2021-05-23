@@ -5,6 +5,10 @@ export default {
   assetsSubDirectory: '/static',
   assetsPublicPath: '/',
 
+  loading: {
+    height: '10px'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Tomek Olszowski | Photographer',
