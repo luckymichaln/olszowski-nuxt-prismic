@@ -117,7 +117,7 @@ export default {
 .contact-page {
   height: 100vh;
   width: 100vw;
-  padding-top: 80px;
+  padding-top: 40px;
 
   &__main {
     display: flex;
@@ -126,14 +126,21 @@ export default {
   }
 
   &__header {
+    width: calc(100% - (100% / 3));
     margin-bottom: 75px;
     text-transform: uppercase;
   }
 
   &__columns {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     text-transform: uppercase;
+
+    @media(min-width: 879px) {
+      flex-direction: row;
+      margin-bottom: 60px;
+    }
   }
 
   .column {
@@ -141,19 +148,37 @@ export default {
     flex-direction: column;
 
     &--left {
-      width: 50%;
-      padding-right: 30px;
+      width: 100%;
+      margin-bottom: 40px;
+
+      @media(min-width: 879px) {
+        width: 50%;
+        padding-right: 30px;
+        margin-bottom: 0;
+      }
     }
 
     &--right {
-      width: 50%;
-      padding-left: 30px;
-      text-align: right;
+      width: 100%;
+
+      @media(min-width: 879px) {
+        width: 50%;
+        padding-left: 30px;
+        text-align: right;
+      }
+    }
+
+    a {
+      word-break: break-word;
     }
   }
 
   &__footer {
-    margin-top: auto;
+    margin-top: 40px;
+
+    @media(min-width: 879px) {
+      margin-top: auto;
+    }
   }
 
   .column-box:not(:last-of-type) {
@@ -163,6 +188,10 @@ export default {
   .nav__link-wrapper {
     position: relative;
     display: inline-block;
+  }
+
+  @media(min-width: 879px) {
+    margin-top: 40px;
   }
 }
 </style>

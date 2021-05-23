@@ -46,7 +46,7 @@ a:hover {
 
 .nav {
   position: fixed;
-  top: 80px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 99999;
@@ -60,6 +60,10 @@ a:hover {
 
   a {
     pointer-events: auto;
+  }
+
+  @media(min-width: 879px) {
+    top: 80px;
   }
 }
 
