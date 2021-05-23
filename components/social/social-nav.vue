@@ -34,6 +34,14 @@ export default {
       }
     }
   },
+
+  mounted() {
+    const allLinks = document.querySelectorAll('.social-nav a')
+    allLinks.forEach(node => {
+      const svg = document.getElementById('arrow').cloneNode(true)
+      node.prepend(document.createElement('div').appendChild(svg))
+    })
+  }
 }
 </script>
 
@@ -42,30 +50,30 @@ export default {
 
   .social-nav {
     display: none;
-    position: fixed;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-    width: 100%;
-    max-width: $container-width;
-    padding: 0 $container-padding;
-    text-transform: uppercase;
-    pointer-events: none;
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      font-weight: 600;
-    }
-
-    li {
-      pointer-events: auto;
-    }
 
     @media (min-width: 767px) {
       display: block;
+      position: fixed;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      width: 100%;
+      max-width: $container-width;
+      padding: 0 $container-padding;
+      text-transform: uppercase;
+      pointer-events: none;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-weight: 600;
+      }
+
+      li {
+        pointer-events: auto;
+      }
     }
   }
 </style>

@@ -51,12 +51,6 @@ export default {
   },
 
   mounted() {
-    const allLinks = document.querySelectorAll('.social-nav a')
-    allLinks.forEach(node => {
-      const svg = document.getElementById('arrow').cloneNode(true)
-      node.prepend(document.createElement('div').appendChild(svg))
-    })
-
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
 
