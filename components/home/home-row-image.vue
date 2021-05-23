@@ -66,7 +66,7 @@ export default {
         this.intervalImages[0].style.zIndex = '10'
         setTimeout(() => {
           Array(this.intervalImages)[0].forEach(el => el.style.visibility = 'visible')
-        }, 5);
+        }, 15);
 
         let i = 1
         let zI = 11
@@ -94,7 +94,7 @@ export default {
               el.style.visibility = 'hidden'
               el.style.zIndex = this.intervalIndex
             })
-          }, 300);
+          }, 10);
         }
       }
     }
