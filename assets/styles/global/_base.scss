@@ -43,14 +43,19 @@ a:hover {
 
 .container {
   max-width: $container-width;
-  padding-right: $container-padding;
-  padding-left: $container-padding;
+  padding-right: $container-padding--mobile;
+  padding-left: $container-padding--mobile;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding-right: $container-padding;
+    padding-left: $container-padding;
+  }
 }
 
 .nav {
   position: fixed;
-  top: 40px;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 99999;
@@ -59,15 +64,17 @@ a:hover {
   text-align: right;
   font-weight: 600;
   pointer-events: none;
-  padding: 0 $container-padding;
+  padding: 0 10px;
   text-transform: uppercase;
+  font-size: 22px;
 
   a {
     pointer-events: auto;
   }
 
-  @media(min-width: 879px) {
-    top: 80px;
+  @media (min-width: 768px) {
+    padding: 0 $container-padding;
+    font-size: inherit;
   }
 }
 
@@ -114,8 +121,11 @@ a:hover {
       height: 160px;
     }
 
-    &:hover svg {
-      display: block;
+    @media(min-width: 768px) {
+      &:hover svg {
+        display: block;
+      }
     }
+
   }
 }

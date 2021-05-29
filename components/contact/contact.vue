@@ -89,17 +89,17 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: 'https://images.prismic.io/toshootingcarsv2/276a3b51-207f-4370-ba79-e8b65b5a271d_TomekOlszowski+Porsche_718_5.jpg?auto=compress,format'
+          content: 'https://images.prismic.io/toshootingcarsv2/276a3b51-207f-4370-ba79-e8b65b5a271d_TomekOlszowski+Porsche_718_5.jpg'
         },
         {
           hid: 'og:image_source',
           property: 'og:image_source',
-          content: 'https://images.prismic.io/toshootingcarsv2/276a3b51-207f-4370-ba79-e8b65b5a271d_TomekOlszowski+Porsche_718_5.jpg?auto=compress,format'
+          content: 'https://images.prismic.io/toshootingcarsv2/276a3b51-207f-4370-ba79-e8b65b5a271d_TomekOlszowski+Porsche_718_5.jpg'
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: 'https://images.prismic.io/toshootingcarsv2/276a3b51-207f-4370-ba79-e8b65b5a271d_TomekOlszowski+Porsche_718_5.jpg?auto=compress,format'
+          content: 'https://images.prismic.io/toshootingcarsv2/276a3b51-207f-4370-ba79-e8b65b5a271d_TomekOlszowski+Porsche_718_5.jpg'
         },
       ]
     }
@@ -148,14 +148,14 @@ export default {
 @import '~/assets/styles/variables/layout';
 
 .contact-page {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  padding-top: 40px;
+  padding: 80px 0 80px;
+  font-size: 22px;
 
   &__main {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 160px);
   }
 
   &__header {
@@ -223,8 +223,13 @@ export default {
     display: inline-block;
   }
 
-  @media(min-width: 879px) {
-    margin-top: 40px;
+  @media (min-width: 768px) {
+    font-size: inherit;
+    padding-bottom: 0;
+
+    &__main {
+      height: calc(100vh - 160px);
+    }
   }
 }
 </style>

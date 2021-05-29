@@ -49,11 +49,13 @@ export default {
   },
 
   mounted() {
-    this.$refs.hovers.addEventListener('contextmenu', ev => {
-      if (ev.target.offsetParent.classList.contains('home-row-image__hovers')) {
-        ev.preventDefault();
-      }
-    })
+    if (this.$refs.hovers) {
+      this.$refs.hovers.addEventListener('contextmenu', ev => {
+        if (ev.target.offsetParent.classList.contains('home-row-image__hovers')) {
+          ev.preventDefault();
+        }
+      })
+    }
     if (this.data.hovers && this.$refs.hovers.children) {
       this.intervalImages = this.$refs.hovers.children
     }
@@ -134,6 +136,11 @@ export default {
       object-fit: cover;
       visibility: hidden;
     }
+  }
+
+  @media (max-width: 767px) {
+    width: 100% !important;
+    margin-left: 0 !important;
   }
 }
 </style>

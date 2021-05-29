@@ -3,28 +3,27 @@
     class="project-page"
     :style="{ paddingTop: `${data.offset_top}%` }"
   >
+    <nav class="nav">
+      <div class="nav__link-wrapper">
+        <nuxt-link
+          to="/"
+        >
+          <div class="wrapper-inner">
+            <span>
+              {{ data.nav_label }}
+            </span>
+            <svg width="173" height="111" xmlns="http://www.w3.org/2000/svg" id="arrow">
+              <g>
+                <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
+                <line stroke="currentColor" stroke-width="25" id="svg_3" y2="74.87087" x2="213.4426" y1="74.87087" x1="0.78523" fill="none"/>
+                <line transform="rotate(-45 187.448 102.946)" stroke="currentColor" stroke-width="25" id="svg_5" y2="102.94626" x2="239.76579" y1="102.94626" x1="135.13134" fill="none"/>
+              </g>
+            </svg>
+          </div>
+        </nuxt-link>
+      </div>
+    </nav>
     <div class="container project-page__text">
-      <nav class="nav">
-        <div class="nav__link-wrapper">
-          <nuxt-link
-            to="/"
-          >
-            <div class="wrapper-inner">
-              <span>
-                {{ data.nav_label }}
-              </span>
-              <svg width="173" height="111" xmlns="http://www.w3.org/2000/svg" id="arrow">
-                <g>
-                  <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
-                  <line stroke="currentColor" stroke-width="25" id="svg_3" y2="74.87087" x2="213.4426" y1="74.87087" x1="0.78523" fill="none"/>
-                  <line transform="rotate(-45 187.448 102.946)" stroke="currentColor" stroke-width="25" id="svg_5" y2="102.94626" x2="239.76579" y1="102.94626" x1="135.13134" fill="none"/>
-                </g>
-              </svg>
-            </div>
-          </nuxt-link>
-        </div>
-      </nav>
-
       <prismic-rich-text
         class="project-page__info"
         :field="data.project_info"

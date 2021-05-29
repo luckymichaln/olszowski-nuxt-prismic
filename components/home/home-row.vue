@@ -34,10 +34,8 @@ export default {
     @media (max-width: 767px) {
       flex-wrap: wrap;
 
-      &-image {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-top: 20px !important;
+      &:not(:first-child) .home-row-image {
+        margin-top: 30px !important;
       }
     }
   }

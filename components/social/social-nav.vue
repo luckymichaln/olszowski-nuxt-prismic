@@ -54,7 +54,7 @@ export default {
     @media (min-width: 767px) {
       display: block;
       position: fixed;
-      bottom: 40px;
+      bottom: 80px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 9999;
@@ -74,10 +74,6 @@ export default {
       li {
         pointer-events: auto;
       }
-    }
-
-    @media(min-width: 879px) {
-      bottom: 60px;
     }
   }
 </style>

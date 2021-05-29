@@ -35,12 +35,16 @@ export default {
     line-height: 0;
 
     @media (max-width: 767px) {
+      margin-bottom: 0 !important;
       flex-wrap: wrap;
 
       .project-row-image {
         width: 100% !important;
         margin-left: 0 !important;
-        margin-top: 40px !important;
+      }
+
+      &:not(:first-of-type) :not(.project-row-image:first-child) {
+        margin-top: 30px !important;
       }
     }
   }
