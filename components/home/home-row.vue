@@ -34,8 +34,12 @@ export default {
     @media (max-width: 767px) {
       flex-wrap: wrap;
 
-      &:not(:first-child) .home-row-image {
+      &-image {
         margin-top: 30px !important;
+      }
+
+      &:first-child .home-row-image:first-child {
+        margin-top: 0 !important;
       }
     }
   }

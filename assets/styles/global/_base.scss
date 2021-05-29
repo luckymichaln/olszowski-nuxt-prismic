@@ -81,13 +81,15 @@ a:hover {
 .wrapper-inner--arrow {
   position: relative;
 
-  &:hover {
-    span {
-      opacity: 0;
-    }
+  @media (min-width: 768px) {
+    &:hover {
+      span {
+        opacity: 0;
+      }
 
-    svg {
-      display: block;
+      svg {
+        display: block;
+      }
     }
   }
 

@@ -25,14 +25,14 @@
         </nuxt-link>
       </div>
     </nav>
-    <div>
+    <main class="home-page__main">
       <homeRow
         v-for="(row, i) in data.body"
         :key="i"
         :data="row"
         :setPagePosition="setPagePosition"
       />
-    </div>
+    </main>
     <socialNav class="arrows-main" />
   </div>
 </template>

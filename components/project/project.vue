@@ -35,6 +35,10 @@
       :key="index"
       :data="row"
     />
+    <prismic-rich-text
+      class="project-page__info project-page__info--bottom"
+      :field="data.project_info"
+    />
   </div>
 </template>
 
@@ -124,6 +128,21 @@ export default {
   &__info {
     margin-top: 80px;
     text-transform: uppercase;
+    display: none;
+
+    &--bottom {
+      padding: 0 15px 80px;
+      font-size: 22px;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      display: block;
+
+      &--bottom {
+        display: none;
+      }
+    }
   }
 
   .nav__link-wrapper {

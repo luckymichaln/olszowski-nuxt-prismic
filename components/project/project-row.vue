@@ -41,10 +41,11 @@ export default {
       .project-row-image {
         width: 100% !important;
         margin-left: 0 !important;
+        margin-top: 30px !important;
       }
 
-      &:not(:first-of-type) :not(.project-row-image:first-child) {
-        margin-top: 30px !important;
+      &:first-of-type .project-row-image:first-child {
+        margin-top: 0 !important;
       }
     }
   }
