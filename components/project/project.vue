@@ -152,26 +152,36 @@ export default {
     .wrapper-inner {
       &:hover {
         span {
-          opacity: 0;
-        }
-
-        svg {
-          display: block;
+          text-decoration: underline;
         }
       }
 
       svg {
-        position: absolute;
-        top: -59px;
-        left: -89px;
-        transform: rotate(180deg) scale(0.74);
-        width: 234px;
-        height: 151px;
         display: none;
+      }
 
-        @media (min-width: 1350px) {
+      @media (min-width: 768px) {
+        svg {
+          position: absolute;
+          top: -59px;
+          left: -89px;
+          transform: rotate(180deg) scale(0.74);
+          width: 234px;
+          height: 151px;
+          display: none;
           transform: rotate(180deg) scale(0.85);
           left: -83px;
+        }
+
+        &:hover {
+          span {
+            text-decoration: none;
+            opacity: 0;
+          }
+
+          svg {
+            display: block;
+          }
         }
       }
     }
