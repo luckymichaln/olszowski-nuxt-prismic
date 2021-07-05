@@ -96,19 +96,18 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.data, 'dta')
-  },
-
   beforeMount() {
     this.body = document.getElementsByTagName('body')[0];
     this.body.style.backgroundColor = this.data.background_color;
     this.body.style.color = this.data.text_color;
   },
 
-  beforeDestroy() {
-    this.body.style.backgroundColor = '#fff'
-    this.body.style.color = '#000'
+  mounted() {
+    window.scrollTo(0,0);
+  },
+
+  components: {
+    projectRow
   }
 }
 </script>
@@ -185,6 +184,10 @@ export default {
         }
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 0 !important;
   }
 }
 </style>

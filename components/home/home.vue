@@ -89,6 +89,12 @@ export default {
     }
   },
 
+  beforeMount() {
+    this.body = document.getElementsByTagName('body')[0];
+    this.body.style.backgroundColor = this.data.background_color;
+    this.body.style.color = this.data.text_color;
+  },
+
   mounted() {
     // document.addEventListener('contextmenu', event => event.preventDefault());
     document.getElementsByTagName("body")[0].style.opacity = 0;
@@ -127,6 +133,11 @@ export default {
       }
     }
   },
+
+  components: {
+    homeRow,
+    socialNav
+  }
 }
 </script>
 

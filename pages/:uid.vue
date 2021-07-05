@@ -27,6 +27,10 @@ export default {
   computed: {
     ...mapState('pages', ['currentProject']),
     ...mapGetters('pages', ['projectsData']),
-  }
+  },
+
+  components: {
+      project
+    }
 }
 </script>

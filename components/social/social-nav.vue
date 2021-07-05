@@ -61,7 +61,6 @@ export default {
       width: 100%;
       max-width: $container-width;
       padding: 0 $container-padding;
-      text-transform: uppercase;
       pointer-events: none;
 
       ul {

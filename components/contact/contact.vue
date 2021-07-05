@@ -136,11 +136,6 @@ export default {
       node.prepend(document.createElement('div').appendChild(svg))
     })
   },
-
-  beforeDestroy() {
-    this.body.style.backgroundColor = '#fff'
-    this.body.style.color = '#000'
-  }
 }
 </script>
 
@@ -161,14 +156,12 @@ export default {
   &__header {
     width: calc(100% - (100% / 3));
     margin-bottom: 75px;
-    text-transform: uppercase;
   }
 
   &__columns {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-transform: uppercase;
 
     @media(min-width: 879px) {
       flex-direction: row;
