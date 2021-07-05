@@ -103,9 +103,18 @@ export default {
   },
 
   mounted() {
-    setTimeout(() => {
-      window.scrollTo(0,0);
-    }, 300);
+    if (window.innerWidth <= 768) {
+      const elements = document.getElementsByClassName('project-row');
+      elements.forEach(element => {
+        element.style.opacity = 0;
+      })
+      setTimeout(() => {
+        window.scrollTo(0,0);
+        elements.forEach(element => {
+          element.style.opacity = 1;
+        })
+      }, 300);
+    }
   },
 
   components: {

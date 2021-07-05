@@ -125,7 +125,14 @@ export default {
   },
 
   mounted () {
-    window.scrollTo(0,0);
+    if (window.innerWidth <= 768) {
+      const elements = document.getElementsByClassName('contact-page__columns')[0];
+      elements.style.opacity = 0;
+      setTimeout(() => {
+        window.scrollTo(0,0);
+        elements.style.opacity = 1;
+      }, 300);
+    }
 
     const yearNode = this.$refs.year
     const copyNode = this.$refs.copy
