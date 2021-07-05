@@ -125,7 +125,8 @@ export default {
   },
 
   mounted () {
-    console.log('object')
+    window.scrollTo(0,0);
+
     const yearNode = this.$refs.year
     const copyNode = this.$refs.copy
     copyNode.children[0].prepend(yearNode)

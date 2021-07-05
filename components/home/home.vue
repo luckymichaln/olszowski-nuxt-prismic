@@ -96,7 +96,6 @@ export default {
   },
 
   mounted() {
-    // document.addEventListener('contextmenu', event => event.preventDefault());
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
 
