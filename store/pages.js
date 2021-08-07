@@ -7,6 +7,7 @@ export const state = () => ({
   currentProject: '',
   socialNav: null,
   pagePosition: null,
+  navText: null,
 })
 
 export const actions = {
@@ -43,6 +44,23 @@ export const actions = {
     } catch (err) {
       console.error('error retrieving social nav', { err })
     }
+  },
+
+  async GET_NAV_TEXT({ commit }) {
+    try {
+      let doc = {}
+      const result = await this.$prismic.api.getSingle('navigation')
+      doc = result.data
+
+      console.log(doc, 'doc')
+      if (doc) {
+        commit('SET_NAV_TEXT', { data: doc })
+
+      }
+
+    } catch (err) {
+      console.error('error retrieving main navigation text', { err })
+    }
   }
 }
 
@@ -59,6 +77,10 @@ export const mutations = {
 
   SET_SOCIAL_NAV(state, { data }) {
     state.socialNav = data
+  },
+
+  SET_NAV_TEXT(state, { data }) {
+    state.navText = data
   },
 
   SET_CURRENT_PROJECT(state, { data }) {
@@ -97,5 +119,6 @@ export const getters = {
   },
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
   projectsData: state => state.projectsData,
-  pagePosition: state => state.pagePosition
+  pagePosition: state => state.pagePosition,
+  navigationText: state => state.navText
 }

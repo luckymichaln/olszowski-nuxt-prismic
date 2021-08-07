@@ -18,5 +18,9 @@ export default {
   computed: {
     ...mapGetters('pages', ['contactPageData'])
   },
+
+  components: {
+    contact
+  }
 }
 </script>

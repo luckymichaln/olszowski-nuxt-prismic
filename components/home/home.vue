@@ -4,7 +4,7 @@
     :style="{ paddingTop: `${data.offset_top}%` }"
   >
     <nav class="nav">
-      <p class="logo">Tomek Olszowski</p>
+      <p class="logo">{{ navigationText.logotype_text }}</p>
       <div class="nav__link-wrapper">
         <nuxt-link
           to="/contact"
@@ -105,7 +105,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters('pages', ['pagePosition'])
+    ...mapGetters('pages', ['pagePosition', 'navigationText']),
   },
 
   methods: {

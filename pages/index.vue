@@ -13,6 +13,11 @@
       if (!store.getters['pages/homePageData']) {
         await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'homepage' })
       }
+
+      // if (!store.getters['pages/navigationText']) {
+        await store.dispatch('pages/GET_NAV_TEXT')
+        console.log('g')
+      // }
     },
 
     computed: {
