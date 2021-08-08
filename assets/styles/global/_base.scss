@@ -62,7 +62,6 @@ a:hover {
   width: 100%;
   max-width: $container-width;
   text-align: right;
-  font-weight: 600;
   pointer-events: none;
   padding: 0 10px;
   font-size: 22px;
@@ -83,11 +82,11 @@ a:hover {
   @media (min-width: 768px) {
     &:hover {
       span {
-        opacity: 0;
+        // opacity: 0;
       }
 
       svg {
-        display: block;
+        // display: block;
       }
     }
   }
