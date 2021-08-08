@@ -9,7 +9,7 @@
           <prismic-link
             :field="el.social_link"
           >
-            {{ linkLabel(el.social_link.url) }}
+            {{ el.link_text }}
           </prismic-link>
         </li>
       </ul>
@@ -26,13 +26,13 @@ export default {
   },
 
   methods: {
-    linkLabel(url) {
-      if (url) {
-        const chunk = url.split('//')[1].split('.')[0] === 'www' ? url.split('//')[1].split('.')[1] : url.split('//')[1].split('.')[0]
-        const label = chunk.split('.')[0]
-        return label.charAt(0).toUpperCase() + label.slice(1)
-      }
-    }
+    // linkLabel(url) {
+    //   if (url) {
+    //     const chunk = url.split('//')[1].split('.')[0] === 'www' ? url.split('//')[1].split('.')[1] : url.split('//')[1].split('.')[0]
+    //     const label = chunk.split('.')[0]
+    //     return label.charAt(0).toUpperCase() + label.slice(1)
+    //   }
+    // }
   },
 
   mounted() {
