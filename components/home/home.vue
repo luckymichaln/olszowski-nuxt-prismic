@@ -147,13 +147,13 @@ export default {
   justify-content: space-between;
 
   .wrapper-inner--arrow svg {
-    transform: rotate(0deg) scale(0.16);
-    left: 30px;
-    top: -67px;
+    transform: rotate(0deg) scale(0.16) !important;
+    left: 30px !important;
+    top: -67px !important;
 
     @media (min-width: 1350px) {
-      transform: rotate(0deg) scale(0.85);
-      left: -15px;
+      transform: rotate(0deg) scale(0.85) !important;
+      left: -15px !important;
     }
   }
 }

@@ -229,12 +229,12 @@ export default {
 
     a svg {
       position: absolute;
-      top: -59px;
-      left: unset;
-      right: 20%;
-      transform: rotate(180deg) scale(0.16);
-      width: 234px;
-      height: 151px;
+      top: -59px !important;
+      left: unset !important;
+      right: 20% !important;
+      transform: rotate(180deg) scale(0.16) !important;
+      width: 234px !important;
+      height: 151px !important;
     }
   }
 

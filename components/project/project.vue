@@ -173,11 +173,11 @@ export default {
       @media (min-width: 768px) {
         svg {
           position: absolute;
-          top: -59px;
-          right: 20px;
-          transform: rotate(180deg) scale(0.16);
-          width: 234px;
-          height: 151px;
+          top: -59px !important;
+          right: 20px !important;
+          transform: rotate(180deg) scale(0.16) !important;
+          width: 234px !important;
+          height: 151px !important;
           display: none;
         }
 
