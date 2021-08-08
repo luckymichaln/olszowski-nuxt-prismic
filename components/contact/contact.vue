@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-page">
+  <div class="contact-page arrows-main">
     <div class="contact-page__inner">
       <div class="container">
         <nav class="nav">
@@ -222,6 +222,16 @@ export default {
   .nav__link-wrapper {
     position: relative;
     display: inline-block;
+
+    a svg {
+      position: absolute;
+      top: -59px;
+      left: unset;
+      right: 20%;
+      transform: rotate(180deg) scale(0.16);
+      width: 234px;
+      height: 151px;
+    }
   }
 
   @media (min-width: 768px) {

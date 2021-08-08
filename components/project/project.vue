@@ -1,6 +1,6 @@
 <template>
   <div
-    class="project-page"
+    class="project-page arrows-main"
     :style="{ paddingTop: `${data.offset_top}%` }"
   >
     <nav class="nav">
@@ -174,24 +174,15 @@ export default {
         svg {
           position: absolute;
           top: -59px;
-          left: -89px;
-          transform: rotate(180deg) scale(0.74);
+          right: calc(100% + 20px);
+          transform: rotate(180deg) scale(0.16);
           width: 234px;
           height: 151px;
           display: none;
-          transform: rotate(180deg) scale(0.85);
-          left: -83px;
         }
 
-        &:hover {
-          span {
-            text-decoration: none;
-            opacity: 0;
-          }
-
-          svg {
-            display: block;
-          }
+        &:hover svg {
+          display: block;
         }
       }
     }

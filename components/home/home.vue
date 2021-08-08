@@ -1,6 +1,6 @@
 <template>
   <div
-    class="home-page"
+    class="home-page arrows-main"
     :style="{ paddingTop: `${data.offset_top}%` }"
   >
     <nav class="nav">
@@ -147,8 +147,9 @@ export default {
   justify-content: space-between;
 
   .wrapper-inner--arrow svg {
-    transform: rotate(0deg) scale(0.74);
-    left: -27px;
+    transform: rotate(0deg) scale(0.16);
+    left: 30px;
+    top: -67px;
 
     @media (min-width: 1350px) {
       transform: rotate(0deg) scale(0.85);
