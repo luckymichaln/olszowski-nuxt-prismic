@@ -25,16 +25,6 @@ export default {
     ...mapGetters('pages', ['homePageData'])
   },
 
-  methods: {
-    // linkLabel(url) {
-    //   if (url) {
-    //     const chunk = url.split('//')[1].split('.')[0] === 'www' ? url.split('//')[1].split('.')[1] : url.split('//')[1].split('.')[0]
-    //     const label = chunk.split('.')[0]
-    //     return label.charAt(0).toUpperCase() + label.slice(1)
-    //   }
-    // }
-  },
-
   mounted() {
     const allLinks = document.querySelectorAll('.social-nav a')
     allLinks.forEach(node => {
