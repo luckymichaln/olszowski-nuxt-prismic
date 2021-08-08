@@ -174,7 +174,7 @@ export default {
         svg {
           position: absolute;
           top: -59px;
-          right: calc(100% + 20px);
+          right: 20px;
           transform: rotate(180deg) scale(0.16);
           width: 234px;
           height: 151px;
