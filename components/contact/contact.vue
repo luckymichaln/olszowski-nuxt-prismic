@@ -185,6 +185,10 @@ export default {
       width: 100%;
       margin-bottom: 40px;
 
+      div:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
       @media(min-width: 879px) {
         width: 50%;
         padding-right: 30px;
