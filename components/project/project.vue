@@ -173,11 +173,11 @@ export default {
       @media (min-width: 768px) {
         svg {
           position: absolute;
-          top: -59px !important;
-          right: 20px !important;
-          transform: rotate(180deg) scale(0.16) !important;
-          width: 234px !important;
-          height: 151px !important;
+          top: -61px;
+          right: 17px;
+          transform: rotate(180deg) scale(0.15);
+          width: 234px;
+          height: 151px;
           display: none;
         }
 
@@ -185,11 +185,17 @@ export default {
           display: block;
         }
       }
+
+      @media (min-width: 1350px) {
+        svg {
+          right: 30px;
+        }
+      }
     }
   }
 
   @media (max-width: 768px) {
-    padding-top: 0 !important;
+    padding-top: 0;
   }
 }
 </style>
