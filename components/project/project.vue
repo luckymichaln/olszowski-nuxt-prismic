@@ -137,7 +137,6 @@ export default {
 
   &__info {
     margin-top: 80px;
-    text-transform: uppercase;
     display: none;
 
     &--bottom {
