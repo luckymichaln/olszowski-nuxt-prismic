@@ -33,6 +33,7 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     line-height: 0;
+    min-height: 15px;
 
     @media (max-width: 767px) {
       margin-bottom: 0 !important;
