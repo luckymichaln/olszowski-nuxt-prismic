@@ -188,6 +188,7 @@ export default {
 
       @media (min-width: 1350px) {
         svg {
+          top: -59px;
           right: 30px;
         }
       }

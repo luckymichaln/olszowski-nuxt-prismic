@@ -154,7 +154,7 @@ export default {
     @media (min-width: 1350px) {
       transform: rotate(0deg) scale(0.16);
       left: 24px;
-      top: -64px;
+      top: -62px;
     }
   }
 }
