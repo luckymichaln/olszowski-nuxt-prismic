@@ -160,6 +160,8 @@ export default {
     display: inline-block;
 
     .wrapper-inner {
+      position: relative;
+
       &:hover {
         span {
           text-decoration: underline;
@@ -189,7 +191,7 @@ export default {
       @media (min-width: 1350px) {
         svg {
           top: -59px;
-          right: 30px;
+          right: 10px;
         }
       }
     }
