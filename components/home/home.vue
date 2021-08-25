@@ -122,7 +122,7 @@ export default {
 
         setTimeout(() => {
           window.scrollTo(0, this.pagePosition);
-        }, 30);
+        }, 50);
 
         setTimeout(() => {
           body.style.height = "auto";

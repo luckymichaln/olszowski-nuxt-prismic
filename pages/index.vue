@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import { mapGetters, mapState } from 'vuex';
+  import { mapGetters } from 'vuex';
   import home from '~/components/home/home';
 
   export default {
@@ -14,10 +14,9 @@
         await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'homepage' })
       }
 
-      // if (!store.getters['pages/navigationText']) {
+      if (!store.getters['pages/navigationText']) {
         await store.dispatch('pages/GET_NAV_TEXT')
-        console.log('g')
-      // }
+      }
     },
 
     computed: {

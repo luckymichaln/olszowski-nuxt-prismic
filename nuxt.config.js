@@ -44,7 +44,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/prismic',
-    'nuxt-lazy-load',
+    // 'nuxt-lazy-load',
   ],
 
   prismic: {

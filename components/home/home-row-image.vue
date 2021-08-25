@@ -116,6 +116,7 @@ export default {
   align-self: flex-start;
   align-items: center;
   justify-content: center;
+  min-height: 50px;
 
   &__hovers {
     position: absolute;

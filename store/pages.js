@@ -52,7 +52,6 @@ export const actions = {
       const result = await this.$prismic.api.getSingle('navigation')
       doc = result.data
 
-      console.log(doc, 'doc')
       if (doc) {
         commit('SET_NAV_TEXT', { data: doc })
 
