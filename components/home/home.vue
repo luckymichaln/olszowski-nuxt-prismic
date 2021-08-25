@@ -4,14 +4,19 @@
     :style="{ paddingTop: `${data.offset_top}%` }"
   >
     <nav class="nav">
-      <p class="logo">{{ navigationText.logotype_text }}</p>
+      <prismic-rich-text
+        class="logo"
+        :field="navigationText.logotype_text"
+      />
       <div class="nav__link-wrapper">
         <nuxt-link
           to="/contact"
           @mousedown.native="setPagePosition"
         >
           <div class="wrapper-inner wrapper-inner--arrow">
-            <span>{{data.nav_label}}</span>
+            <prismic-rich-text
+              :field="data.nav_label"
+            />
             <svg width="173" height="111" xmlns="http://www.w3.org/2000/svg" id="arrow">
               <g>
                 <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
