@@ -6,7 +6,7 @@ export default {
   assetsPublicPath: '/',
 
   loading: {
-    height: '10px'
+    height: '4px'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
