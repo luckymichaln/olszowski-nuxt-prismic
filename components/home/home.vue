@@ -101,6 +101,7 @@ export default {
   mounted() {
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
+    console.log('object')
 
     setTimeout(() => {
       document.getElementsByTagName("body")[0].style.opacity = 1;
@@ -123,7 +124,9 @@ export default {
       let pageHeight = parseInt(height) + 1000;
 
       if (this.pagePosition) {
+        console.log(this.pagePosition, 'this.pagePosition')
         body.style.height = `${pageHeight}px`;
+        console.log(this.pagePosition, 'this.pagePosition')
 
         setTimeout(() => {
           window.scrollTo(0, this.pagePosition);
@@ -131,7 +134,7 @@ export default {
 
         setTimeout(() => {
           body.style.height = "auto";
-        }, 200);
+        }, 1500);
       }
     }
   },
