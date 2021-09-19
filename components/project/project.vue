@@ -11,6 +11,7 @@
           <div class="wrapper-inner arrow--back">
             <prismic-rich-text
               :field="data.nav_label"
+              :style="{ fontSize: innerWidth <= fontSizeChange ? `${data.nav_font_size_medium}px` : `${data.nav_font_size_large}px` }"
             />
             <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="2.39999" y="9.35562" width="29.6" height="3.2" fill="currentColor"/>
@@ -84,6 +85,8 @@ export default {
   data () {
     return {
       body: null,
+      innerWidth: null,
+      fontSizeChange: 1300,
     }
   },
 
@@ -112,6 +115,18 @@ export default {
           element.style.opacity = 1;
         })
       }, 300);
+    }
+
+    this.checkFontSize()
+  },
+
+  methods: {
+    checkFontSize() {
+      if (window) {
+        window.addEventListener('resize', ev => {
+          this.innerWidth = ev.target.innerWidth
+        })
+      }
     }
   },
 
