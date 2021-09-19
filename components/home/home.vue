@@ -106,8 +106,6 @@ export default {
   },
 
   mounted() {
-    if (window) this.innerWidth = window.innerWidth
-
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
 
@@ -150,6 +148,8 @@ export default {
 
     checkFontSize() {
       if (window) {
+        this.innerWidth = window.innerWidth
+
         window.addEventListener('resize', ev => {
           this.innerWidth = ev.target.innerWidth
         })

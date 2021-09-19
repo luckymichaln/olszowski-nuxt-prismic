@@ -123,6 +123,8 @@ export default {
   methods: {
     checkFontSize() {
       if (window) {
+        this.innerWidth = window.innerWidth
+
         window.addEventListener('resize', ev => {
           this.innerWidth = ev.target.innerWidth
         })
@@ -131,7 +133,7 @@ export default {
   },
 
   components: {
-    projectRow
+    projectRow,
   }
 }
 </script>

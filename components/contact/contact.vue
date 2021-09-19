@@ -126,8 +126,6 @@ export default {
   },
 
   mounted () {
-    if (window) this.innerWidth = window.innerWidth
-
     if (window.innerWidth <= 768) {
       const elements = document.getElementsByClassName('contact-page__columns')[0];
       elements.style.opacity = 0;
@@ -153,6 +151,8 @@ export default {
   methods: {
     checkFontSize() {
       if (window) {
+        this.innerWidth = window.innerWidth
+
         window.addEventListener('resize', ev => {
           this.innerWidth = ev.target.innerWidth
         })
