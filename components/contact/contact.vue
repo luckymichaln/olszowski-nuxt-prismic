@@ -7,23 +7,21 @@
             <nuxt-link
               to="/"
             >
-              <div class="wrapper-inner wrapper-inner--arrow">
+              <div class="wrapper-inner wrapper-inner--arrow arrow--back">
                 <prismic-rich-text
                   :field="data.nav_label"
                 />
-                <svg width="173" height="111" xmlns="http://www.w3.org/2000/svg" id="arrow">
-                  <g>
-                    <line transform="rotate(45 187.493 46.7574)" stroke="currentColor" stroke-width="25" id="svg_6" y2="46.75739" x2="239.69642" y1="46.75739" x1="135.28954" fill="none"/>
-                    <line stroke="currentColor" stroke-width="25" id="svg_3" y2="74.87087" x2="213.4426" y1="74.87087" x1="0.78523" fill="none"/>
-                    <line transform="rotate(-45 187.448 102.946)" stroke="currentColor" stroke-width="25" id="svg_5" y2="102.94626" x2="239.76579" y1="102.94626" x1="135.13134" fill="none"/>
-                  </g>
+                <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg" id="arrow">
+                  <rect x="2.39999" y="9.35562" width="29.6" height="3.2" fill="currentColor"/>
+                  <rect x="2.26276" y="8.55563" width="14.4" height="3.2" transform="rotate(45 2.26276 8.55563)" fill="currentColor"/>
+                  <rect x="12.4451" y="2.81836" width="14.4" height="3.2" transform="rotate(135 12.4451 2.81836)" fill="currentColor"/>
                 </svg>
               </div>
             </nuxt-link>
           </div>
         </nav>
         <div
-          class="contact-page__main arrows-main"
+          class="contact-page__main arrows--links"
           ref="pageMainNode"
         >
           <header class="contact-page__header">
@@ -226,23 +224,6 @@ export default {
   .nav__link-wrapper {
     position: relative;
     display: inline-block;
-
-    a svg {
-      position: absolute;
-      top: -60px;
-      left: unset;
-      right: 0;
-      transform: rotate(180deg) scale(0.15);
-      width: 234px;
-      height: 151px;
-    }
-
-    @media (min-width: 1350px) {
-      a svg {
-        top: -58px;
-        right: 15px;
-      }
-    }
   }
 
   @media (min-width: 768px) {
