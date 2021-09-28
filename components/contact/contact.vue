@@ -38,17 +38,17 @@
                 :field="el.row"
               />
             </div>
-            <div
-              v-if="data.right_column"
-              class="column column--right"
-            >
-              <prismic-rich-text
-                v-for="(el, i) in data.right_column"
-                class="column-box"
-                :key="i"
-                :field="el.row"
-              />
-            </div>
+          </div>
+          <div
+            v-if="data.right_column"
+            class="column column--right"
+          >
+            <prismic-rich-text
+              v-for="(el, i) in data.right_column"
+              class="column-box"
+              :key="i"
+              :field="el.row"
+            />
           </div>
           <footer class="contact-page__footer">
             <span
@@ -149,7 +149,7 @@ export default {
 .contact-page {
   min-height: 100vh;
   width: 100vw;
-  padding: 80px 0 80px;
+  padding: 80px 0 0;
   font-size: 22px;
 
   &__main {
@@ -194,9 +194,9 @@ export default {
 
     &--right {
       width: 100%;
+      margin-bottom: 75px;
 
       @media(min-width: 879px) {
-        width: 50%;
         padding-left: 30px;
         text-align: right;
       }
@@ -208,10 +208,12 @@ export default {
   }
 
   &__footer {
-    margin-top: 40px;
+    /* margin-top: 40px; */
+    padding-bottom: 80px;
 
     @media(min-width: 879px) {
       margin-top: auto;
+      padding-bottom: 75px;
     }
   }
 
@@ -226,7 +228,7 @@ export default {
 
   @media (min-width: 768px) {
     font-size: inherit;
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
 
     &__main {
       height: calc(100vh - 160px);
