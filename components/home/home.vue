@@ -7,7 +7,6 @@
       <prismic-rich-text
         class="logo"
         :field="navigationText.logotype_text"
-        :style="{ fontSize: innerWidth <= fontSizeChange ? `${data.nav_font_size_medium}px` : `${data.nav_font_size_large}px` }"
       />
       <div class="nav__link-wrapper">
         <nuxt-link
@@ -15,10 +14,7 @@
           @mousedown.native="setPagePosition"
         >
           <div class="wrapper-inner wrapper-inner--arrow arrow--next">
-            <prismic-rich-text
-              :field="data.nav_label"
-              :style="{ fontSize: innerWidth <= fontSizeChange ? `${data.nav_font_size_medium}px` : `${data.nav_font_size_large}px` }"
-            />
+            <prismic-rich-text :field="data.nav_label" />
             <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg" id="arrow">
               <rect x="2.39999" y="9.35562" width="29.6" height="3.2" fill="currentColor"/>
               <rect x="2.26276" y="8.55563" width="14.4" height="3.2" transform="rotate(45 2.26276 8.55563)" fill="currentColor"/>
@@ -53,13 +49,6 @@ export default {
     },
 
     location: null,
-  },
-
-  data() {
-    return {
-      innerWidth: null,
-      fontSizeChange: 1300,
-    }
   },
 
   head() {
@@ -112,8 +101,6 @@ export default {
     setTimeout(() => {
       document.getElementsByTagName("body")[0].style.opacity = 1;
     }, 70);
-
-    this.checkFontSize()
   },
 
   computed: {
@@ -145,16 +132,6 @@ export default {
         }, 1500);
       }
     },
-
-    checkFontSize() {
-      if (window) {
-        this.innerWidth = window.innerWidth
-
-        window.addEventListener('resize', ev => {
-          this.innerWidth = ev.target.innerWidth
-        })
-      }
-    }
   },
 
   components: {
