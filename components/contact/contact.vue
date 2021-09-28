@@ -208,7 +208,6 @@ export default {
   }
 
   &__footer {
-    /* margin-top: 40px; */
     padding-bottom: 80px;
 
     @media(min-width: 879px) {
@@ -228,7 +227,6 @@ export default {
 
   @media (min-width: 768px) {
     font-size: inherit;
-    /* padding-bottom: 0; */
 
     &__main {
       height: calc(100vh - 160px);
