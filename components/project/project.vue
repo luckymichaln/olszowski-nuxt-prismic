@@ -39,7 +39,10 @@
     >
       <span
         class="title-text"
-        :style="{ fontWeight: title.bold ? 600 : 400 }"
+        :style="{
+          fontWeight: title.bold ? 600 : 400,
+          color: `${title.title_text_color}`
+        }"
       >
         {{ title.text }}
       </span>
