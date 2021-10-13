@@ -29,7 +29,7 @@
     <div
       v-for="(title, i) in data.titles"
       :key="title.text + i"
-      class="title"
+      class="project-page__free-title"
       :style="{
         width: `${title.title_width}vw`,
         top: `${title.title_offset_top}vw`,
@@ -186,17 +186,22 @@ export default {
     }
   }
 
+  &__free-title {
+    position: absolute;
+    display: block;
+  }
+
   .nav__link-wrapper {
     position: relative;
     display: inline-block;
   }
 
-  .title {
-    position: absolute;
-  }
-
   @media (max-width: 768px) {
     padding-top: 0;
+
+    &__free-title {
+      display: none;
+    }
   }
 }
 </style>
