@@ -26,6 +26,25 @@
       />
     </div>
 
+    <div
+      v-for="(title, i) in data.titles"
+      :key="title.text + i"
+      class="title"
+      :style="{
+        width: `${title.title_width}vw`,
+        top: `${title.title_offset_top}vw`,
+        left: `${title.title_offset_left}vw`
+      }"
+      ref="titleNodes"
+    >
+      <span
+        class="title-text"
+        :style="{ fontWeight: title.bold ? 600 : 400 }"
+      >
+        {{ title.text }}
+      </span>
+    </div>
+
     <projectRow
       v-for="(row, index) in data.body"
       :key="index"
@@ -111,6 +130,23 @@ export default {
         })
       }, 300);
     }
+
+    if (this.$refs.titleNodes && this.$refs.titleNodes.length) {
+      this.$refs.titleNodes.forEach(el => this.fontSizeSet(el));
+    }
+  },
+
+  methods: {
+    fontSizeSet(node) {
+      for (var i = 0; i <= 1000; i++ ) {
+        const text = node.firstElementChild;
+        const textWidth = node.offsetWidth;
+        const tW = text.offsetWidth;
+
+        if (tW >= (textWidth * .99)) { return }
+        text.style.fontSize = i/25 + 'vw';
+      }
+    }
   },
 
   components: {
@@ -153,6 +189,10 @@ export default {
   .nav__link-wrapper {
     position: relative;
     display: inline-block;
+  }
+
+  .title {
+    position: absolute;
   }
 
   @media (max-width: 768px) {
