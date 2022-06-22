@@ -24,15 +24,15 @@ img {
 body {
   font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   @media (min-width: 1350px) {
-    font-size: 34px;
+    font-size: 27px;
   }
 }
 
