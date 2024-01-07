@@ -10,8 +10,8 @@
       :style="{width: `${image.image_width}%`, marginLeft: `${image.offset_left}%`, marginTop: `${image.offset_top}%`}"
     >
       <img
-        :src="`${image.image_sd.url}&q=100`"
-        :srcset="`${image.image_sd.url}&q==100 1x, ${image.image_hd.url}&q=100 2x`"
+        :src="image.image_sd.url"
+        :srcset="`${image.image_sd.url} 1x, ${image.image_hd.url} 2x`"
       />
     </div>
   </section>
@@ -25,6 +25,10 @@ export default {
       default: () => {}
     }
   },
+
+  mounted() {
+    console.log(this.data, 'projo')
+  }
 }
 </script>
 

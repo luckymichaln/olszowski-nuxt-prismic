@@ -17,8 +17,8 @@
       >
     </span>
     <img
-      :src="`${data.cover_sd.url}&q=100`"
-      :srcset="`${data.cover_sd.url}&q=100 1x, ${data.cover_hd.url}&q=100 2x`"
+      :src="data.cover_sd.url"
+      :srcset="`${data.cover_sd.url} 1x, ${data.cover_hd.url} 2x`"
     />
     <div
       v-if="data.hovers"
