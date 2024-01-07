@@ -2,7 +2,8 @@ export const state = () => ({
   singlePageData: {
     homepage: null,
     homepagev2: null,
-    contactpage: null
+    contactpage: null,
+    aboutpage: null
   },
   projectsData: {},
   currentProject: '',
@@ -122,7 +123,6 @@ export const getters = {
   homePageDataV2: state => {
     if (!state.singlePageData.homepagev2) { return null }
 
-    console.log(state.singlePageData.homepagev2, 'state.singlePageData.homepagev2')
     return {
       ...state.singlePageData.homepagev2,
       body: state.singlePageData.homepagev2.body.map(row => {
@@ -131,8 +131,14 @@ export const getters = {
           const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, hover_image_6, hover_image_7, hover_image_8, hover_image_9, hover_image_10].filter(el => el.url);
 
           return {
-            cover_sd: cover.cover_sd,
-            cover_hd: cover.cover_hd,
+            cover_sd: {
+              ...cover.cover_sd,
+              url: cover.cover_sd.url.split('?')[0]
+            },
+            cover_hd: {
+              ...cover.cover_hd,
+              url: cover.cover_sd.url.split('?')[0]
+            },
             cover_width: cover.cover_width,
             offset_left: cover.offset_left,
             offset_top: cover.offset_top,
@@ -145,7 +151,39 @@ export const getters = {
     }
   },
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
-  projectsData: state => state.projectsData,
+  aboutPageData: state => state.singlePageData.aboutpage ? state.singlePageData.aboutpage : null,
+  projectsData: state => {
+    if (!state.projectsData && !state.projectsData[state.currentProject]) { return null }
+
+    return {
+      ...state.projectsData,
+      [state.currentProject]: {
+        ...state.projectsData[state.currentProject],
+        body: state.projectsData[state.currentProject].body.map(row => {
+          return {
+            ...row,
+            items: row.items.map(item => {
+              return {
+                ...item,
+                image_hd: {
+                  ...item.image_hd,
+                  url: item.image_hd.url.split('?')[0]
+                },
+                image_sd: {
+                  ...item.image_sd,
+                  url: item.image_sd.url.split('?')[0]
+                },
+                image_mobile: {
+                  ...item.image_mobile,
+                  url: item.image_mobile.url.split('?')[0]
+                },
+              }
+            })
+          }
+        })
+      }
+    }
+  },
   pagePosition: state => state.pagePosition,
   navigationText: state => state.navText
 }
