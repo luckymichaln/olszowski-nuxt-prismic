@@ -1,6 +1,7 @@
 export const state = () => ({
   singlePageData: {
     homepage: null,
+    homepagev2: null,
     contactpage: null
   },
   projectsData: {},
@@ -12,10 +13,12 @@ export const state = () => ({
 
 export const actions = {
   async GET_PAGE_DATA({ commit }, { pageType, uid }) {
+    console.log(pageType, 'pageType');
     try {
       let doc = {}
       const result = uid ? await this.$prismic.api.getByUID(`${pageType}`, `${uid}`) : await this.$prismic.api.getSingle(`${pageType}`)
       doc = result.data
+      console.log({doc})
       if (doc && uid) {
         commit('SET_PROJECT_PAGE_DATA', { data: doc, uid });
         return;
@@ -100,7 +103,32 @@ export const getters = {
       body: state.singlePageData.homepage.body.map(row => {
         return row.items.map(cover => {
           const { hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5 } = cover;
-          const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5].filter(el => el.url);
+          const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, ].filter(el => el.url);
+
+          return {
+            cover_sd: cover.cover_sd,
+            cover_hd: cover.cover_hd,
+            cover_width: cover.cover_width,
+            offset_left: cover.offset_left,
+            offset_top: cover.offset_top,
+            project: cover.project,
+            ...(hovers.length && { hover_interval: cover.hover_interval || 500 }),
+            ...(hovers.length && { hovers })
+          }
+        })
+      }),
+    }
+  },
+  homePageDataV2: state => {
+    if (!state.singlePageData.homepagev2) { return null }
+
+    console.log(state.singlePageData.homepagev2, 'state.singlePageData.homepagev2')
+    return {
+      ...state.singlePageData.homepagev2,
+      body: state.singlePageData.homepagev2.body.map(row => {
+        return row.items.map(cover => {
+          const { hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, hover_image_6, hover_image_7, hover_image_8, hover_image_9, hover_image_10 } = cover;
+          const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, hover_image_6, hover_image_7, hover_image_8, hover_image_9, hover_image_10].filter(el => el.url);
 
           return {
             cover_sd: cover.cover_sd,
