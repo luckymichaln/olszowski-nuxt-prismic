@@ -2,7 +2,12 @@
   <prismic-link
     class="home-row-image"
     :field="data.project"
-    :style="{width: `${data.cover_width}%`, marginLeft: `${data.offset_left}%`, marginTop: `${data.offset_top}vw`}"
+    :style="{
+      width: `${data.cover_width}%`,
+      marginLeft: `${data.offset_left}%`,
+      marginTop: `${data.offset_top}vw`,
+      pointerEvents: data.project.uid ? 'all' : 'none'
+    }"
     @mousedown.native="setPagePosition"
   >
     <img
