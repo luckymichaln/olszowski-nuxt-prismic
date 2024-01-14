@@ -22,6 +22,10 @@ export default {
 
     setPagePosition: Function
   },
+
+  components: {
+    homeRowImage
+  }
 }
 </script>
 

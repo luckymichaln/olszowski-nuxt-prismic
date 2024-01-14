@@ -8,21 +8,6 @@
         class="logo"
         :field="navigationText.logotype_text"
       />
-      <div class="nav__link-wrapper">
-        <nuxt-link
-          to="/contact"
-          @mousedown.native="setPagePosition"
-        >
-          <div class="wrapper-inner wrapper-inner--arrow arrow--next">
-            <prismic-rich-text :field="data.nav_label" />
-            <svg width="32" height="21" viewBox="0 0 32 21" fill="none" xmlns="http://www.w3.org/2000/svg" id="arrow">
-              <rect x="2.39999" y="9.35562" width="29.6" height="3.2" fill="currentColor"/>
-              <rect x="2.26276" y="8.55563" width="14.4" height="3.2" transform="rotate(45 2.26276 8.55563)" fill="currentColor"/>
-              <rect x="12.4451" y="2.81836" width="14.4" height="3.2" transform="rotate(135 12.4451 2.81836)" fill="currentColor"/>
-            </svg>
-          </div>
-        </nuxt-link>
-      </div>
     </nav>
     <main class="home-page__main">
       <homeRow
@@ -33,6 +18,7 @@
       />
     </main>
     <socialNav class="arrows-main" />
+    <burger-menu :color="data.text_color" />
   </div>
 </template>
 
@@ -40,6 +26,7 @@
 import { mapGetters } from 'vuex'
 import homeRow from '~/components/homev2/home-row'
 import socialNav from '~/components/socialv2/social-nav-v2'
+import burgerMenu from '~/components/burger-menu/burger-menu'
 
 export default {
   props: {
@@ -136,7 +123,8 @@ export default {
 
   components: {
     homeRow,
-    socialNav
+    socialNav,
+    burgerMenu
   }
 }
 </script>

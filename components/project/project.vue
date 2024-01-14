@@ -153,7 +153,7 @@ export default {
   },
 
   components: {
-    projectRow,
+    projectRow
   }
 }
 </script>

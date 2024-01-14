@@ -3,7 +3,9 @@ export const state = () => ({
     homepage: null,
     homepagev2: null,
     contactpage: null,
-    aboutpage: null
+    contactpagev2: null,
+    aboutpage: null,
+    aboutpagev2: null
   },
   projectsData: {},
   currentProject: '',
@@ -151,9 +153,11 @@ export const getters = {
     }
   },
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
-  aboutPageData: state => state.singlePageData.aboutpage ? state.singlePageData.aboutpage : null,
+  contactPageDataV2: state => state.singlePageData.contactpagev2 ? state.singlePageData.contactpagev2 : null,
+  aboutPageDataV2: state => state.singlePageData.aboutpage ? state.singlePageData.aboutpage : null,
   projectsData: state => {
-    if (!state.projectsData && !state.projectsData[state.currentProject]) { return null }
+    console.log(state.projectsData, 'state.projectsData');
+    if (!state.projectsData[state.currentProject]) { return null }
 
     return {
       ...state.projectsData,

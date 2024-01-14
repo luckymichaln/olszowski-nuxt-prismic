@@ -15,6 +15,10 @@ export default {
     }
   },
 
+  mounted() {
+    console.log(this.contactPageData, 'contactPageData')
+  },
+
   computed: {
     ...mapGetters('pages', ['contactPageData'])
   },

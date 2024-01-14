@@ -1,6 +1,9 @@
 <template>
   <prismic-link
-    class="home-row-image"
+    :class="{
+      'home-row-image': true,
+      'home-row-image--mobile': data.project.uid
+    }"
     :field="data.project"
     :style="{
       width: `${data.cover_width}%`,
@@ -14,7 +17,7 @@
       v-if="data.project.uid"
       class="home-row-image-link-icon"
     >
-      >
+      +
     </span>
     <img
       :src="data.cover_sd.url"
@@ -130,6 +133,14 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 50px;
+
+  &:not(.home-row-image--mobile) {
+    display: none;
+
+    @media (min-width: 767px) {
+      display: block;
+    }
+  }
 
   &-link-icon {
     position: absolute;
