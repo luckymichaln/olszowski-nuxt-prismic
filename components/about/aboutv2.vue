@@ -13,6 +13,7 @@
 
 <script>
 import burgerMenu from '~/components/burger-menu/burger-menu'
+
 export default {
   components: { burgerMenu },
   head() {

@@ -1,17 +1,37 @@
 <template>
-  <div>
+  <div
+    class="burger"
+    ref="burgerMenu"
+  >
     <button
       class="burger-opener"
       @click="toggleMenu()"
-      :style="{
-        color: color
-      }"
     >
-      Button
+      <ul class="burger-opener-icon">
+        <li
+          :style="{
+            backgroundColor: color
+          }"
+        />
+        <li
+          :style="{
+            backgroundColor: color
+          }"
+        />
+        <li
+          :style="{
+            backgroundColor: color
+          }"
+        />
+        <li
+          :style="{
+            backgroundColor: color
+          }"
+        />
+      </ul>
     </button>
     <ul
       class="burger-menu"
-      ref="burgerMenu"
     >
       <li
         v-for="(item, i) in menu"
@@ -40,11 +60,11 @@ export default {
   methods: {
     toggleMenu() {
       if (this.menuIsOpen) {
-        this.$refs.burgerMenu.classList.remove('burger-menu--opened');
+        this.$refs.burgerMenu.classList.remove('burger--opened');
         this.menuIsOpen = false;
         return;
       }
-      this.$refs.burgerMenu.classList.add('burger-menu--opened');
+      this.$refs.burgerMenu.classList.add('burger--opened');
       this.menuIsOpen = true;
     }
   },
@@ -79,7 +99,43 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999991;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
   cursor: pointer;
+  outline: inherit;
+
+  .burger-opener-icon {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    color: inherit;
+
+    li {
+      position: absolute;
+      left: 0;
+      height: 3px;
+      width: 30px;
+      background: inherit;
+      transition: .3s all ease-out;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 7px;
+      }
+      &:nth-child(3) {
+        top: 14px;
+      }
+      &:nth-child(4) {
+        top: 21px;
+      }
+    }
+  }
 }
 
 .burger-menu {
@@ -100,12 +156,33 @@ export default {
   transition: opacity .3s;
   opacity: 0;
   pointer-events: none;
+}
 
-
-
+.burger {
   &--opened {
-    opacity: 1;
-    pointer-events: all;
+    .burger-menu {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .burger-opener-icon {
+      li {
+        background-color: #000 !important;
+
+        &:nth-child(1) {
+          opacity: 0;
+        }
+        &:nth-child(2) {
+          transform: rotate(45deg) translate(2px, 3px);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(2px, -3px);
+        }
+        &:nth-child(4) {
+          opacity: 0;
+        }
+      }
+    }
   }
 }
 </style>
