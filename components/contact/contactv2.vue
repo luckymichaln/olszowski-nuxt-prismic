@@ -131,6 +131,7 @@ export default {
     align-items: flex-start;
     justify-content: center;
     width: 100%;
+    padding: 0 100px;
 
     p {
       &:not(:last-of-type) {
