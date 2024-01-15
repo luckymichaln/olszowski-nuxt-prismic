@@ -10,7 +10,7 @@
         left: `${data.logo_offset_left}%`,
         fontSize: `${data.logo_size}%`,
         position: 'fixed',
-        zIndex: '11100000',
+        zIndex: '9999',
         pointerEvents: 'none',
       }"
       :field="navigationText.logotype_text"
