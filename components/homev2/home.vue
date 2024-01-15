@@ -1,14 +1,20 @@
 <template>
   <div
     class="home-page arrows-main"
-    :style="{ paddingTop: `${data.offset_top}%` }"
   >
-    <nav class="nav">
-      <prismic-rich-text
-        class="logo"
-        :field="navigationText.logotype_text"
-      />
-    </nav>
+    <prismic-rich-text
+      class="logo"
+      :style="{
+        transform: `translateX(-${data.logo_offset_left}%) translateY(-${data.logo_offset_top}%)`,
+        top: `${data.logo_offset_top}%`,
+        left: `${data.logo_offset_left}%`,
+        fontSize: `${data.logo_size}%`,
+        position: 'fixed',
+        zIndex: '11100000',
+        pointerEvents: 'none',
+      }"
+      :field="navigationText.logotype_text"
+    />
     <main class="home-page__main">
       <homeRow
         v-for="(row, i) in data.body"
@@ -82,6 +88,7 @@ export default {
   },
 
   mounted() {
+    console.log(this.data,' dsdsds')
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
 
@@ -131,8 +138,8 @@ export default {
 
 <style lang="scss">
 .home-page .nav {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 </style>
