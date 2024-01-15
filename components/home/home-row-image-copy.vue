@@ -144,8 +144,11 @@ export default {
 
   &-link-icon {
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 17px;
+    bottom: 28px;
+    font-size: 50px;
+    color: #f5f5f5;
+    z-index: 9999;
 
     @media (max-width: 767px) {
       display: none;

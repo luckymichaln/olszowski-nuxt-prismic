@@ -10,22 +10,22 @@
       <ul class="burger-opener-icon">
         <li
           :style="{
-            backgroundColor: color
+            backgroundColor: color || '#000'
           }"
         />
         <li
           :style="{
-            backgroundColor: color
+            backgroundColor: color || '#000'
           }"
         />
         <li
           :style="{
-            backgroundColor: color
+            backgroundColor: color || '#000'
           }"
         />
         <li
           :style="{
-            backgroundColor: color
+            backgroundColor: color || '#000'
           }"
         />
       </ul>
