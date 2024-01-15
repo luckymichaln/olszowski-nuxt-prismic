@@ -5,7 +5,7 @@
   >
     <button
       class="burger-opener"
-      @click="toggleMenu()"
+      @click="(ev) => toggleMenu(ev.target.current)"
     >
       <ul class="burger-opener-icon">
         <li
@@ -58,7 +58,8 @@ export default {
   },
 
   methods: {
-    toggleMenu() {
+    toggleMenu(ev) {
+      console.log(ev, 'ev')
       if (this.menuIsOpen) {
         this.$refs.burgerMenu.classList.remove('burger--opened');
         this.menuIsOpen = false;
@@ -126,13 +127,13 @@ export default {
       }
 
       &:nth-child(2) {
-        top: 7px;
+        top: 8px;
       }
       &:nth-child(3) {
-        top: 14px;
+        top: 16px;
       }
       &:nth-child(4) {
-        top: 21px;
+        top: 24px;
       }
     }
   }
@@ -150,12 +151,17 @@ export default {
   justify-content: center;
   width: 100%;
   height: 100%;
+  font-size: 40px;
   background: #fff;
   color: #000;
   z-index: 999999;
   transition: opacity .3s;
   opacity: 0;
   pointer-events: none;
+
+  li {
+    margin-bottom: 10px;
+  }
 }
 
 .burger {
@@ -173,7 +179,7 @@ export default {
           opacity: 0;
         }
         &:nth-child(2) {
-          transform: rotate(45deg) translate(2px, 3px);
+          transform: rotate(45deg) translate(3px, 3px);
         }
         &:nth-child(3) {
           transform: rotate(-45deg) translate(2px, -3px);

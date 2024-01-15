@@ -105,7 +105,6 @@ export default {
   min-height: 100vh;
   width: 100vw;
   padding: 80px 0 0;
-  font-size: 22px;
 
   &__inner {
     height: 80vh;
@@ -115,10 +114,11 @@ export default {
   .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     height: 100%;
     width: 100%;
+    font-size: 30px;
   }
 
   h1, h2 {
@@ -128,12 +128,11 @@ export default {
   &-row {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    width: 100%;
 
     p {
-      text-align: center;
-
       &:not(:last-of-type) {
         margin-bottom: 6px;
       }
@@ -146,9 +145,11 @@ export default {
 
   &-columns {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 
     li {
-      margin: 0 70px;
+      margin-right: 170px;
     }
   }
 

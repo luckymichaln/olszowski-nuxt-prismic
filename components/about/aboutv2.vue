@@ -86,7 +86,6 @@ export default {
   min-height: 100vh;
   width: 100vw;
   padding: 80px 0 0;
-  font-size: 22px;
 
   &__inner {
     height: 80vh;
@@ -103,6 +102,7 @@ export default {
 
   &-box {
     margin: 0 100px;
+    font-size: 30px;
   }
 
   p:not(:last-of-type) {
