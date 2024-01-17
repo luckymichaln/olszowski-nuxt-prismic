@@ -21,7 +21,6 @@ export const actions = {
       let doc = {}
       const result = uid ? await this.$prismic.api.getByUID(`${pageType}`, `${uid}`) : await this.$prismic.api.getSingle(`${pageType}`)
       doc = result.data
-      console.log({doc})
       if (doc && uid) {
         commit('SET_PROJECT_PAGE_DATA', { data: doc, uid });
         return;
@@ -128,6 +127,7 @@ export const getters = {
     return {
       ...state.singlePageData.homepagev2,
       body: state.singlePageData.homepagev2.body.map(row => {
+        console.log(state.singlePageData.homepagev2.body[0].items[0], 'state');
         return row.items.map(cover => {
           const { hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, hover_image_6, hover_image_7, hover_image_8, hover_image_9, hover_image_10 } = cover;
           const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, hover_image_6, hover_image_7, hover_image_8, hover_image_9, hover_image_10].filter(el => el.url);
@@ -135,11 +135,11 @@ export const getters = {
           return {
             cover_sd: {
               ...cover.cover_sd,
-              url: cover.cover_sd.url.split('?')[0]
+              ...cover.cover_sd.url && { url: cover.cover_sd.url.split('?')[0] },
             },
             cover_hd: {
               ...cover.cover_hd,
-              url: cover.cover_sd.url.split('?')[0]
+              ...cover.cover_hd.url && { url: cover.cover_hd.url.split('?')[0] },
             },
             cover_width: cover.cover_width,
             offset_left: cover.offset_left,
