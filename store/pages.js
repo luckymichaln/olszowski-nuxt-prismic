@@ -127,7 +127,6 @@ export const getters = {
     return {
       ...state.singlePageData.homepagev2,
       body: state.singlePageData.homepagev2.body.map(row => {
-        console.log(state.singlePageData.homepagev2.body[0].items[0], 'state');
         return row.items.map(cover => {
           const { hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, hover_image_6, hover_image_7, hover_image_8, hover_image_9, hover_image_10 } = cover;
           const hovers = [hover_image_1, hover_image_2, hover_image_3, hover_image_4, hover_image_5, hover_image_6, hover_image_7, hover_image_8, hover_image_9, hover_image_10].filter(el => el.url);
@@ -145,6 +144,7 @@ export const getters = {
             offset_left: cover.offset_left,
             offset_top: cover.offset_top,
             project: cover.project,
+            vimeo_embed: cover.vimeo_embed,
             ...(hovers.length && { hover_interval: cover.hover_interval || 500 }),
             ...(hovers.length && { hovers })
           }

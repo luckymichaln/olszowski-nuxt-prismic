@@ -10,7 +10,6 @@
 
   export default {
     async asyncData({ store }) {
-      console.log(store, 'store');
       if (!store.getters['pages/homePageData']) {
         await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'homepagev2' })
       }

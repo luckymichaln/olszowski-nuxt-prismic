@@ -1,46 +1,63 @@
 <template>
-  <prismic-link
-    :class="{
-      'home-row-image': true,
-      'home-row-image--mobile': data.project.uid
-    }"
-    :field="data.project"
+  <span
     :style="{
       width: `${data.cover_width}%`,
       marginLeft: `${data.offset_left}%`,
       marginTop: `${data.offset_top}vw`,
-      pointerEvents: data.project.uid ? 'all' : 'none'
+      ...(data.vimeo_embed.uri && { height: (16/9) * data.cover_width + '%' } )
     }"
-    @mousedown.native="setPagePosition"
   >
-    <span
-      v-if="data.project.uid"
-      class="home-row-image-link-icon"
-    >
-      +
-    </span>
-    <img
-      :src="data.cover_sd.url"
-      :srcset="`${data.cover_sd.url} 1x, ${data.cover_hd.url} 2x`"
-    />
     <div
-      v-if="data.hovers"
-      class="home-row-image__hovers"
-      @mouseenter="manageHovers(hoverInterval)"
-      @mouseleave="resetInterval"
-      ref="hovers"
+      v-if="data.vimeo_embed.uri"
     >
-      <img
-        v-for="img in data.hovers"
-        :key="img.url"
-        :src="`${img.url}&q=100`"
+      <prismic-embed
+        :field="data.vimeo_embed"
       />
     </div>
-  </prismic-link>
+    <prismic-link
+      v-if="!data.vimeo_embed.uri"
+      :class="{
+        'home-row-image': true,
+        'home-row-image--mobile': data.project.uid
+      }"
+      :field="data.project"
+      :style="{
+        pointerEvents: data.project.uid ? 'all' : 'none'
+      }"
+      @mousedown.native="setPagePosition"
+    >
+      <span
+        v-if="data.project.uid"
+        class="home-row-image-link-icon"
+      >
+        +
+      </span>
+      <img
+        :src="data.cover_sd.url"
+        :srcset="`${data.cover_sd.url} 1x, ${data.cover_hd.url} 2x`"
+      />
+      <div
+        v-if="data.hovers"
+        class="home-row-image__hovers"
+        @mouseenter="manageHovers(hoverInterval)"
+        @mouseleave="resetInterval"
+        ref="hovers"
+      >
+        <img
+          v-for="img in data.hovers"
+          :key="img.url"
+          :src="`${img.url}&q=100`"
+        />
+      </div>
+    </prismic-link>
+  </span>
 </template>
 
 <script>
+import about from '../about/about.vue';
+
 export default {
+  components: { about },
   data() {
     return {
       intervalId: null,
@@ -70,7 +87,7 @@ export default {
         }
       })
     }
-    if (this.data.hovers && this.$refs.hovers.children) {
+    if (this.data.hovers && this.$refs.hovers && this.$refs.hovers.children) {
       this.intervalImages = this.$refs.hovers.children
     }
   },
@@ -121,6 +138,10 @@ export default {
         }
       }
     }
+  },
+
+  components: {
+    about,
   }
 }
 </script>

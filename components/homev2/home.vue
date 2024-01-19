@@ -88,7 +88,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.data,' dsdsds')
     document.getElementsByTagName("body")[0].style.opacity = 0;
     this.setActiveSessionPosition();
 
