@@ -143,18 +143,11 @@ export default {
     font-size: inherit;
     min-height: 100vh;
     padding: 0;
-    /* font-size: 30px; */
 
     &__inner {
       height: 80vh;
       width: 100%;
       padding: 0 60px;
-    }
-
-    &-columns {
-      /* li {
-        margin-bottom: 0;
-      } */
     }
   }
 
