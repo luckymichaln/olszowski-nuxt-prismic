@@ -1,14 +1,14 @@
 <template>
-  <div class="contact-page arrows-main">
-    <div class="contact-page__inner">
+  <div class="contact-page-v2 arrows-main">
+    <div class="contact-page-v2__inner">
       <div class="container">
-        <section class="contact-page-row">
+        <section class="contact-page-v2-row">
           <h1>Direct contact</h1>
           <prismic-rich-text :field="data.direct_column" />
         </section>
-        <section class="contact-page-row">
+        <section class="contact-page-v2-row">
           <h2>Inquries</h2>
-          <ul class="contact-page-columns">
+          <ul class="contact-page-v2-columns">
             <li
               v-for="(el, i) in data.inquries"
               :key="i"
@@ -76,20 +76,6 @@ export default {
 
   mounted () {
     console.log(this.data, 'about');
-    if (window.innerWidth <= 768) {
-      const elements = document.getElementsByClassName('contact-page__columns')[0];
-      elements.style.opacity = 0;
-      setTimeout(() => {
-        window.scrollTo(0,0);
-        elements.style.opacity = 1;
-      }, 300);
-    }
-
-    const allLinks = document.querySelectorAll('.contact-page__main a')
-    allLinks.forEach(node => {
-      const svg = document.getElementById('arrow').cloneNode(true)
-      node.prepend(document.createElement('div').appendChild(svg))
-    })
   },
 
   components: {
@@ -101,15 +87,12 @@ export default {
 <style lang="scss">
 @import '~/assets/styles/variables/layout';
 
-.contact-page {
-  min-height: 100vh;
+.contact-page-v2 {
   width: 100vw;
-  padding: 80px 0 0;
-
-  &__inner {
-    height: 80vh;
-    width: 100%;
-  }
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  padding: 40px 0 100px;
 
   .container {
     display: flex;
@@ -118,11 +101,14 @@ export default {
     justify-content: center;
     height: 100%;
     width: 100%;
-    font-size: 30px;
   }
 
   h1, h2 {
     margin-bottom: 40px;
+  }
+
+  &__inner {
+    width: 100%;
   }
 
   &-row {
@@ -131,7 +117,6 @@ export default {
     align-items: flex-start;
     justify-content: center;
     width: 100%;
-    padding: 0 100px;
 
     p {
       &:not(:last-of-type) {
@@ -146,16 +131,46 @@ export default {
 
   &-columns {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
 
     li {
-      margin-right: 170px;
+      margin-bottom: 40px;
     }
   }
 
   @media (min-width: 768px) {
     font-size: inherit;
+    min-height: 100vh;
+    padding: 0;
+    /* font-size: 30px; */
+
+    &__inner {
+      height: 80vh;
+      width: 100%;
+      padding: 0 60px;
+    }
+
+    &-columns {
+      /* li {
+        margin-bottom: 0;
+      } */
+    }
+  }
+
+  @media (min-width: 1030px) {
+    &-columns {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: 1330px) {
+    font-size: 30px;
+
+    &__inner {
+      padding: 0 100px;
+    }
   }
 }
 </style>
