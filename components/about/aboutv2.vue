@@ -63,14 +63,6 @@ export default {
 
   mounted () {
     console.log(this.data, 'about');
-    if (window.innerWidth <= 768) {
-      const elements = document.getElementsByClassName('contact-page__columns')[0];
-      elements.style.opacity = 0;
-      setTimeout(() => {
-        window.scrollTo(0,0);
-        elements.style.opacity = 1;
-      }, 300);
-    }
   },
 
   components: {
@@ -83,14 +75,11 @@ export default {
 @import '~/assets/styles/variables/layout';
 
 .about-page {
-  min-height: 100vh;
   width: 100vw;
-  padding: 80px 0 0;
-
-  &__inner {
-    height: 80vh;
-    width: 100%;
-  }
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  padding: 40px 0 100px;
 
   .container {
     display: flex;
@@ -101,8 +90,8 @@ export default {
   }
 
   &-box {
-    margin: 0 100px;
-    font-size: 30px;
+    margin: 0 30px;
+    font-size: 24px;
   }
 
   p:not(:last-of-type) {
@@ -111,6 +100,18 @@ export default {
 
   @media (min-width: 768px) {
     font-size: inherit;
+    min-height: 100vh;
+    padding: 0;
+
+    &__inner {
+      height: 80vh;
+      width: 100%;
+    }
+
+    &-box {
+      margin: 0 100px;
+      font-size: 30px;
+    }
   }
 }
 </style>
