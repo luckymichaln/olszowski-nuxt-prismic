@@ -3,20 +3,12 @@
     :style="{
       width: `${data.cover_width}%`,
       marginLeft: `${data.offset_left}%`,
-      marginTop: `${data.offset_top}vw`,
-      ...(data.vimeo_embed.uri && { height: (16/9) * data.cover_width + '%' } )
+      marginTop: `${data.offset_top}vw`
     }"
     class="home-row-image-box"
+    @mousedown="setPagePosition"
   >
-    <div
-      v-if="data.vimeo_embed.uri"
-    >
-      <prismic-embed
-        :field="data.vimeo_embed"
-      />
-    </div>
     <prismic-link
-      v-if="!data.vimeo_embed.uri"
       :class="{
         'home-row-image': true,
         'home-row-image--mobile': data.project.uid
@@ -25,7 +17,6 @@
       :style="{
         pointerEvents: data.project.uid ? 'all' : 'none'
       }"
-      @mousedown.native="setPagePosition"
     >
       <span
         v-if="data.project.uid"

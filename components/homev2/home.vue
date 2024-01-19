@@ -9,7 +9,7 @@
         top: `${data.logo_offset_top}%`,
         left: `${data.logo_offset_left}%`,
         fontSize: `${data.logo_size}%`,
-        position: 'fixed',
+        position: navigationText.is_fixed ? 'fixed' : 'absolute',
         zIndex: '9999',
         pointerEvents: 'none',
       }"
@@ -137,8 +137,6 @@ export default {
 
 <style lang="scss">
 .home-page .nav {
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
+
 }
 </style>

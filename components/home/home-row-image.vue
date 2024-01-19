@@ -22,8 +22,8 @@
       ref="hovers"
     >
       <img
-        v-for="img in data.hovers"
-        :key="img.url"
+        v-for="(img, i) in data.hovers"
+        :key="img.url+i"
         :src="`${img.url}&q=100`"
       />
     </div>

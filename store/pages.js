@@ -59,7 +59,6 @@ export const actions = {
 
       if (doc) {
         commit('SET_NAV_TEXT', { data: doc })
-
       }
 
     } catch (err) {
@@ -144,7 +143,6 @@ export const getters = {
             offset_left: cover.offset_left,
             offset_top: cover.offset_top,
             project: cover.project,
-            vimeo_embed: cover.vimeo_embed,
             ...(hovers.length && { hover_interval: cover.hover_interval || 500 }),
             ...(hovers.length && { hovers })
           }
