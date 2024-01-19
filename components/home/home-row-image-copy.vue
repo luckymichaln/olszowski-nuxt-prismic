@@ -6,6 +6,7 @@
       marginTop: `${data.offset_top}vw`,
       ...(data.vimeo_embed.uri && { height: (16/9) * data.cover_width + '%' } )
     }"
+    class="home-row-image-box"
   >
     <div
       v-if="data.vimeo_embed.uri"
@@ -147,6 +148,12 @@ export default {
 </script>
 
 <style lang="scss">
+.home-row-image-box {
+  @media (max-width: 767px) {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
 .home-row-image {
   position: relative;
   display: flex;
@@ -195,11 +202,6 @@ export default {
       object-fit: cover;
       visibility: hidden;
     }
-  }
-
-  @media (max-width: 767px) {
-    width: 100% !important;
-    margin-left: 0 !important;
   }
 }
 </style>
