@@ -57,19 +57,6 @@ export default {
     }
   },
 
-  methods: {
-    toggleMenu(ev) {
-      console.log(ev, 'ev')
-      if (this.menuIsOpen) {
-        this.$refs.burgerMenu.classList.remove('burger--opened');
-        this.menuIsOpen = false;
-        return;
-      }
-      this.$refs.burgerMenu.classList.add('burger--opened');
-      this.menuIsOpen = true;
-    }
-  },
-
   data() {
     return {
       menu: [
@@ -90,6 +77,18 @@ export default {
     }
   },
 
+  methods: {
+    toggleMenu(ev) {
+      console.log(ev, 'ev')
+      if (this.menuIsOpen) {
+        this.$refs.burgerMenu.classList.remove('burger--opened');
+        this.menuIsOpen = false;
+        return;
+      }
+      this.$refs.burgerMenu.classList.add('burger--opened');
+      this.menuIsOpen = true;
+    }
+  }
 }
 </script>
 
@@ -161,6 +160,11 @@ export default {
 
   li {
     margin-bottom: 10px;
+  }
+
+  .nuxt-link-active {
+    text-decoration: underline;
+    pointer-events: none;
   }
 }
 
