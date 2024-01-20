@@ -1,14 +1,16 @@
 <template>
   <div
     class="home-page arrows-main"
+    :style="{
+      fontSize: `${data.logo_size}%`,
+    }"
   >
     <prismic-rich-text
-      class="logo"
+      class="logo logov2"
       :style="{
         transform: `translateX(-${data.logo_offset_left}%) translateY(-${data.logo_offset_top}%)`,
         top: `${data.logo_offset_top}%`,
         left: `${data.logo_offset_left}%`,
-        fontSize: `${data.logo_size}%`,
         position: navigationText.is_fixed ? 'fixed' : 'absolute',
         zIndex: '9999',
         pointerEvents: 'none',
@@ -136,7 +138,11 @@ export default {
 </script>
 
 <style lang="scss">
-.home-page .nav {
+.home-page .logov2 {
+  font-size: 83% !important;
 
+  @media (min-width: 767px) {
+    font-size: inherit !important;
+  }
 }
 </style>
