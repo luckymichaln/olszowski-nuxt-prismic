@@ -1,7 +1,7 @@
 <template>
   <div class="contact-page-v2 arrows-main">
     <div class="contact-page-v2__inner">
-      <div class="container">
+      <div class="">
         <section class="contact-page-v2-row">
           <h1>Direct contact</h1>
           <prismic-rich-text :field="data.direct_column" />
@@ -92,16 +92,7 @@ export default {
   display: flex;
   font-size: 24px;
   align-items: center;
-  padding: 40px 0 100px;
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-  }
+  padding: 40px 30px 100px;
 
   h1, h2 {
     margin-bottom: 40px;
@@ -131,11 +122,16 @@ export default {
 
   &-columns {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
 
     li {
       margin-bottom: 40px;
+
+      &:not(:last-child) {
+        padding-right: 30px;
+      }
     }
   }
 
@@ -154,15 +150,20 @@ export default {
   @media (min-width: 1030px) {
     &-columns {
       flex-direction: row;
-      justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 
   @media (min-width: 1330px) {
     font-size: 30px;
 
+    &-columns {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
     &__inner {
-      padding: 0 100px;
+      padding: 0 14vw;
     }
   }
 }
