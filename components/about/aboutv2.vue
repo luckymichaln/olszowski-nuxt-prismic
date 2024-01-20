@@ -1,11 +1,9 @@
 <template>
   <div class="about-page">
     <div class="about-page__inner">
-      <div class="container">
-        <section class="about-page-box">
-          <prismic-rich-text :field="data.info_row" />
-        </section>
-      </div>
+      <section class="about-page-box">
+        <prismic-rich-text :field="data.info_row" />
+      </section>
     </div>
     <burger-menu :color="data.text_color" />
   </div>
@@ -79,18 +77,9 @@ export default {
   display: flex;
   font-size: 24px;
   align-items: center;
-  padding: 40px 0 100px;
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-  }
+  padding: 40px 30px 100px;
 
   &-box {
-    margin: 0 30px;
     font-size: 24px;
   }
 
@@ -104,13 +93,18 @@ export default {
     padding: 0;
 
     &__inner {
-      height: 80vh;
       width: 100%;
+      padding: 0 60px;
     }
 
     &-box {
-      margin: 0 100px;
       font-size: 30px;
+    }
+  }
+
+  @media (min-width: 1330px) {
+    &__inner {
+      padding: 0 14vw;
     }
   }
 }

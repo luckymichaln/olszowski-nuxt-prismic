@@ -1,25 +1,23 @@
 <template>
   <div class="contact-page-v2 arrows-main">
     <div class="contact-page-v2__inner">
-      <div class="">
-        <section class="contact-page-v2-row">
-          <h1>Direct contact</h1>
-          <prismic-rich-text :field="data.direct_column" />
-        </section>
-        <section class="contact-page-v2-row">
-          <h2>Inquries</h2>
-          <ul class="contact-page-v2-columns">
-            <li
-              v-for="(el, i) in data.inquries"
-              :key="i"
-            >
-              <prismic-rich-text
-                :field="el.inqurie_column"
-              />
-            </li>
-          </ul>
-        </section>
-      </div>
+      <section class="contact-page-v2-row">
+        <h1>Direct contact</h1>
+        <prismic-rich-text :field="data.direct_column" />
+      </section>
+      <section class="contact-page-v2-row">
+        <h2>Inquries</h2>
+        <ul class="contact-page-v2-columns">
+          <li
+            v-for="(el, i) in data.inquries"
+            :key="i"
+          >
+            <prismic-rich-text
+              :field="el.inqurie_column"
+            />
+          </li>
+        </ul>
+      </section>
     </div>
     <burger-menu :color="data.text_color" />
   </div>
@@ -141,7 +139,6 @@ export default {
     padding: 0;
 
     &__inner {
-      height: 80vh;
       width: 100%;
       padding: 0 60px;
     }
