@@ -139,7 +139,7 @@ export default {
 
 <style lang="scss">
 .home-page .logov2 {
-  font-size: 83% !important;
+  font-size: 90% !important;
 
   @media (min-width: 767px) {
     font-size: inherit !important;
