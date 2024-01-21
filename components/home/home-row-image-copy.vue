@@ -163,8 +163,6 @@ export default {
 
   &-link-icon {
     position: absolute;
-    right: 17px;
-    bottom: 28px;
     color: #f5f5f5;
     z-index: 9999;
     cursor: inherit;
@@ -173,10 +171,14 @@ export default {
 
     @media (min-width: 768px) {
       display: block;
+      right: 7px;
+      bottom: 15px;
       font-size: 35px;
     }
 
     @media (min-width: 1330px) {
+      right: 17px;
+      bottom: 28px;
       font-size: 50px;
     }
   }
