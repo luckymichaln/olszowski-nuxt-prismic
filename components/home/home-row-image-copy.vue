@@ -165,14 +165,19 @@ export default {
     position: absolute;
     right: 17px;
     bottom: 28px;
-    font-size: 50px;
     color: #f5f5f5;
     z-index: 9999;
     cursor: inherit;
     pointer-events: none;
+    display: none;
 
-    @media (max-width: 767px) {
-      display: none;
+    @media (min-width: 768px) {
+      display: block;
+      font-size: 35px;
+    }
+
+    @media (min-width: 1330px) {
+      font-size: 50px;
     }
   }
 
