@@ -75,7 +75,7 @@ export default {
 .about-page {
   width: 100vw;
   display: flex;
-  font-size: 24px;
+  font-size: 18px;
   align-items: center;
   padding: 40px 30px 100px;
 
@@ -88,7 +88,7 @@ export default {
   }
 
   @media (min-width: 768px) {
-    font-size: inherit;
+    font-size: 24px;
     min-height: 100vh;
     padding: 0;
 
