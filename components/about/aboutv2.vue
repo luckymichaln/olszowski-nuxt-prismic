@@ -75,12 +75,11 @@ export default {
 .about-page {
   width: 100vw;
   display: flex;
-  font-size: 18px;
   align-items: center;
   padding: 40px 30px 100px;
 
   &-box {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   p:not(:last-of-type) {
@@ -96,6 +95,10 @@ export default {
       width: 100%;
       padding: 0 60px;
     }
+
+    &-box {
+      font-size: 24px;
+    };
   }
 
   @media (min-width: 1330px) {
