@@ -88,12 +88,12 @@ export default {
 .contact-page-v2 {
   width: 100vw;
   display: flex;
-  font-size: 24px;
+  font-size: 18px;
   align-items: center;
   padding: 40px 30px 100px;
 
   h1, h2 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   &__inner {
@@ -114,7 +114,7 @@ export default {
     }
 
     &:not(:last-child) {
-      margin-bottom: 100px;
+      margin-bottom: 70px;
     }
   }
 
@@ -137,10 +137,19 @@ export default {
     font-size: inherit;
     min-height: 100vh;
     padding: 0;
+    font-size: 24px;
+
+    h1, h2 {
+      margin-bottom: 40px;
+    }
 
     &__inner {
       width: 100%;
       padding: 0 60px;
+    }
+
+    &-row:not(:last-child) {
+      margin-bottom: 100px;
     }
   }
 
