@@ -6,7 +6,7 @@
         <prismic-rich-text :field="data.direct_column" />
       </section>
       <section class="contact-page-v2-row">
-        <h2>Inquries</h2>
+        <h2>Inquiries</h2>
         <ul class="contact-page-v2-columns">
           <li
             v-for="(el, i) in data.inquries"
