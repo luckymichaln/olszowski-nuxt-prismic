@@ -96,15 +96,15 @@ export default {
       width: 100%;
       padding: 0 60px;
     }
-
-    &-box {
-      font-size: 30px;
-    }
   }
 
   @media (min-width: 1330px) {
     &__inner {
       padding: 0 14vw;
+    }
+
+    &-box {
+      font-size: 30px;
     }
   }
 }

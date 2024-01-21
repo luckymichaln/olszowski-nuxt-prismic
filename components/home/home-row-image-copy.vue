@@ -168,6 +168,8 @@ export default {
     font-size: 50px;
     color: #f5f5f5;
     z-index: 9999;
+    cursor: inherit;
+    pointer-events: none;
 
     @media (max-width: 767px) {
       display: none;
