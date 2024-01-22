@@ -176,7 +176,7 @@ export default {
 
     &--bottom {
       padding: 0 15px 80px;
-      font-size: 22px;
+      font-size: 18px;
       display: block;
     }
 
