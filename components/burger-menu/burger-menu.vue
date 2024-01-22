@@ -151,8 +151,8 @@ export default {
   width: 100%;
   height: 100%;
   font-size: 40px;
-  background: #fff;
-  color: #000;
+  background: #F5F5F5;
+  color: #1D1D1D;
   z-index: 999999;
   transition: opacity .3s;
   opacity: 0;
