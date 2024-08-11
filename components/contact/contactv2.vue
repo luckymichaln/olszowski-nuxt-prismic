@@ -169,7 +169,7 @@ export default {
     }
 
     &__inner {
-      padding: 0 14vw;
+      padding: 0 20vw;
     }
   }
 }

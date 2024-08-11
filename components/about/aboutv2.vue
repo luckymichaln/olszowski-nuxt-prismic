@@ -103,7 +103,7 @@ export default {
 
   @media (min-width: 1330px) {
     &__inner {
-      padding: 0 14vw;
+      padding: 0 20vw;
     }
 
     &-box {
