@@ -16,7 +16,7 @@ export const state = () => ({
 
 export const actions = {
   async GET_PAGE_DATA({ commit }, { pageType, uid }) {
-    console.log(pageType, 'pageType');
+    // console.log(pageType, 'pageType');
     try {
       let doc = {}
       const result = uid ? await this.$prismic.api.getByUID(`${pageType}`, `${uid}`) : await this.$prismic.api.getSingle(`${pageType}`)
@@ -96,6 +96,7 @@ export const mutations = {
 }
 
 export const getters = {
+  // The old home page
   homePageData: state => {
     if (!state.singlePageData.homepage) { return null }
 
@@ -150,11 +151,11 @@ export const getters = {
       }),
     }
   },
+  // The old contact page
   contactPageData: state => state.singlePageData.contactpage ? state.singlePageData.contactpage : null,
   contactPageDataV2: state => state.singlePageData.contactpagev2 ? state.singlePageData.contactpagev2 : null,
   aboutPageDataV2: state => state.singlePageData.aboutpage ? state.singlePageData.aboutpage : null,
   projectsData: state => {
-    console.log(state.projectsData, 'state.projectsData');
     if (!state.projectsData[state.currentProject]) { return null }
 
     return {

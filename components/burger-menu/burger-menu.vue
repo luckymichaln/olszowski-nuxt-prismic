@@ -62,7 +62,7 @@ export default {
       menu: [
         {
           label: 'Work',
-          path: '/home'
+          path: '/'
         },
         {
           label: 'About',
@@ -70,7 +70,7 @@ export default {
         },
         {
           label: 'Contact',
-          path: '/contactv2'
+          path: '/contact'
         },
       ],
       menuIsOpen: false,
@@ -162,7 +162,7 @@ export default {
     margin-bottom: 10px;
   }
 
-  .nuxt-link-active {
+  .nuxt-link-exact-active {
     text-decoration: underline;
     pointer-events: none;
   }

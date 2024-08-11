@@ -1,30 +1,30 @@
 <template>
-  <contact
-    :data="contactPageData"
+  <contactv2
+    :data="contactPageDataV2"
   />
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import contact from '~/components/contact/contact';
+import contactv2 from '~/components/contact/contactv2';
 
 export default {
   async asyncData({ store }) {
-    if (!store.getters['pages/contactPageData']) {
-      await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'contactpage' })
+    if (!store.getters['pages/contactPageDataV2']) {
+      await store.dispatch('pages/GET_PAGE_DATA', { pageType: 'contactpagev2' })
     }
   },
 
   mounted() {
-    console.log(this.contactPageData, 'contactPageData')
+    console.log(this.contactPageDataV2, 'contactPageDataV2')
   },
 
   computed: {
-    ...mapGetters('pages', ['contactPageData'])
+    ...mapGetters('pages', ['contactPageDataV2'])
   },
 
   components: {
-    contact
+    contactv2
   }
 }
 </script>
