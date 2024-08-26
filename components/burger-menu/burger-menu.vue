@@ -7,28 +7,11 @@
       class="burger-opener"
       @click="(ev) => toggleMenu(ev.target.current)"
     >
-      <ul class="burger-opener-icon">
-        <li
-          :style="{
-            backgroundColor: color || '#000'
-          }"
-        />
-        <li
-          :style="{
-            backgroundColor: color || '#000'
-          }"
-        />
-        <li
-          :style="{
-            backgroundColor: color || '#000'
-          }"
-        />
-        <li
-          :style="{
-            backgroundColor: color || '#000'
-          }"
-        />
-      </ul>
+      <p class="burger-opener-icon" :style="{
+            color: color || '#000'
+          }">
+        +
+      </p>
     </button>
     <ul
       class="burger-menu"
@@ -111,30 +94,11 @@ export default {
     position: relative;
     height: 30px;
     width: 30px;
+    font-size: 54px;
+    line-height: 32px;
+    user-select: none;
     color: inherit;
-
-    li {
-      position: absolute;
-      left: 0;
-      height: 3px;
-      width: 30px;
-      background: inherit;
-      transition: .3s all ease-out;
-
-      &:nth-child(1) {
-        top: 0;
-      }
-
-      &:nth-child(2) {
-        top: 8px;
-      }
-      &:nth-child(3) {
-        top: 16px;
-      }
-      &:nth-child(4) {
-        top: 24px;
-      }
-    }
+    transition: .3s all ease-out;
   }
 }
 
@@ -176,22 +140,8 @@ export default {
     }
 
     .burger-opener-icon {
-      li {
-        background-color: #000 !important;
-
-        &:nth-child(1) {
-          opacity: 0;
-        }
-        &:nth-child(2) {
-          transform: rotate(45deg) translate(3px, 3px);
-        }
-        &:nth-child(3) {
-          transform: rotate(-45deg) translate(2px, -3px);
-        }
-        &:nth-child(4) {
-          opacity: 0;
-        }
-      }
+      transform: rotate(45deg) translate(-3px);
+      color: #000 !important;
     }
   }
 }
