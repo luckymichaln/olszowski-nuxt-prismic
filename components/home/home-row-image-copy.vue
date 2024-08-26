@@ -143,6 +143,7 @@ export default {
   @media (max-width: 767px) {
     width: 100% !important;
     margin-left: 0 !important;
+    margin-top: 0 !important;
   }
 }
 .home-row-image {
